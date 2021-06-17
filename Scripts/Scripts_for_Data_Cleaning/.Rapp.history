@@ -1,0 +1,3400 @@
+res1 <- all_indices(shark_igraph)
+all_indices <- function(g){#
+  res <- matrix(0,vcount(g),35)#
+  res[,1] <- igraph::degree(g)#
+  res[,2] <- igraph::betweenness(g)#
+  res[,3] <- igraph::closeness(g)#
+  res[,4] <- igraph::eigen_centrality(g)$vector#
+  res[,5] <- 1/igraph::eccentricity(g)#
+  res[,6] <- igraph::subgraph_centrality(g)#
+  A <- get.adjacency(g,sparse=F)#
+  res[,7] <- sna::flowbet(A)#
+  res[,8] <- sna::loadcent(A)#
+  res[,9] <- sna::gilschmidt(A)#
+  res[,10] <- sna::infocent(A)#
+  res[,11] <- sna::stresscent(A)#
+#
+  res[,33] <- CINNA::dangalchev_closeness_centrality(g)#
+  res[,34] <- CINNA::harmonic_centrality(g)#
+  res[,35] <- 1/CINNA::local_bridging_centrality(g)#
+  apply(res,2,function(x) round(x,8))#
+}
+res1 <- all_indices(shark_igraph)
+all_indices <- function(g){#
+  res <- matrix(0,vcount(g),35)#
+  res[,1] <- igraph::degree(g)#
+  res[,2] <- igraph::betweenness(g)#
+  #res[,3] <- igraph::closeness(g)#
+  res[,4] <- igraph::eigen_centrality(g)$vector#
+  res[,5] <- 1/igraph::eccentricity(g)#
+  res[,6] <- igraph::subgraph_centrality(g)#
+  A <- get.adjacency(g,sparse=F)#
+  res[,7] <- sna::flowbet(A)#
+  res[,8] <- sna::loadcent(A)#
+  res[,9] <- sna::gilschmidt(A)#
+  res[,10] <- sna::infocent(A)#
+  res[,11] <- sna::stresscent(A)#
+#
+  res[,33] <- CINNA::dangalchev_closeness_centrality(g)#
+  res[,34] <- CINNA::harmonic_centrality(g)#
+  res[,35] <- 1/CINNA::local_bridging_centrality(g)#
+  apply(res,2,function(x) round(x,8))#
+}
+res1 <- all_indices(shark_igraph)
+res1
+all_indices <- function(g){#
+  res <- matrix(0,vcount(g),13)#
+  res[,1] <- igraph::degree(g)#
+  res[,2] <- igraph::betweenness(g)#
+  #res[,3] <- igraph::closeness(g)#
+  res[,3] <- igraph::eigen_centrality(g)$vector#
+  res[,4] <- 1/igraph::eccentricity(g)#
+  res[,5] <- igraph::subgraph_centrality(g)#
+  A <- get.adjacency(g,sparse=F)#
+  res[,6] <- sna::flowbet(A)#
+  res[,7] <- sna::loadcent(A)#
+  res[,8] <- sna::gilschmidt(A)#
+  res[,9] <- sna::infocent(A)#
+  res[,10] <- sna::stresscent(A)#
+#
+  res[,11] <- CINNA::dangalchev_closeness_centrality(g)#
+  res[,12] <- CINNA::harmonic_centrality(g)#
+  res[,15] <- 1/CINNA::local_bridging_centrality(g)#
+  apply(res,2,function(x) round(x,8))#
+}
+res1 <- all_indices(shark_igraph)
+all_indices <- function(g){#
+  res <- matrix(0,vcount(g),13)#
+  res[,1] <- igraph::degree(g)#
+  res[,2] <- igraph::betweenness(g)#
+  #res[,3] <- igraph::closeness(g)#
+  res[,3] <- igraph::eigen_centrality(g)$vector#
+  res[,4] <- 1/igraph::eccentricity(g)#
+  res[,5] <- igraph::subgraph_centrality(g)#
+  A <- get.adjacency(g,sparse=F)#
+  res[,6] <- sna::flowbet(A)#
+  res[,7] <- sna::loadcent(A)#
+  res[,8] <- sna::gilschmidt(A)#
+  res[,9] <- sna::infocent(A)#
+  res[,10] <- sna::stresscent(A)#
+#
+  res[,11] <- CINNA::dangalchev_closeness_centrality(g)#
+  res[,12] <- CINNA::harmonic_centrality(g)#
+  res[,13] <- 1/CINNA::local_bridging_centrality(g)#
+  apply(res,2,function(x) round(x,8))#
+}#
+#
+res1 <- all_indices(shark_igraph)
+res1
+which.max<- function(x) which(max(x))
+which.max(res1[,1])
+which.max<- function(x) which(max(x)==x)#
+#
+which.max(res1[,1])
+apply(res1, 2, which.max)
+eigen_centrality(shark_igraph)$vector
+eigen.out<-cbind(nodes, eigen_centrality(shark_igraph)$vector)#
+names(eigen.out)<-c("id", "label", "centrality")#
+eigen.out<-eigen.out[order(-eigen.out$centrality),]
+head(eigen.out)
+all_indices <- function(g){#
+  res <- matrix(0,vcount(g),13)#
+  res[,1] <- igraph::degree(g)#
+  res[,2] <- igraph::betweenness(g)#
+  #res[,3] <- igraph::closeness(g)#
+  res[,3] <- igraph::eigen_centrality(g)$vector#
+  res[,4] <- 1/igraph::eccentricity(g)#
+  res[,5] <- igraph::subgraph_centrality(g)#
+  A <- get.adjacency(g,sparse=F)#
+  res[,6] <- sna::flowbet(A)#
+  res[,7] <- sna::loadcent(A)#
+  res[,8] <- sna::gilschmidt(A)#
+  res[,9] <- sna::infocent(A)#
+  res[,10] <- sna::stresscent(A)#
+#
+  res[,11] <- CINNA::dangalchev_closeness_centrality(g)#
+  res[,12] <- CINNA::harmonic_centrality(g)#
+  res[,13] <- 1/CINNA::local_bridging_centrality(g)#
+  apply(res,2,function(x) round(x,8))#
+}#
+#
+res1 <- all_indices(shark_igraph)
+res1 <- all_indices(shark_igraph)#
+#
+which.max<- function(x) which(max(x)==x)#
+#
+c(apply(res1, 2, which.max))
+res1
+res <- matrix(0,vcount(shark_igraph),13)#
+  res[,1] <- igraph::degree(shark_igraph)#
+  res[,2] <- igraph::betweenness(shark_igraph)#
+  #res[,3] <- igraph::closeness(g)#
+  res[,3] <- igraph::eigen_centrality(shark_igraph)$vector
+res[,3]
+eccentricity(shark_igraph)
+1/igraph::eccentricity(shark_igraph)
+igraph::subgraph_centrality(shark_igraph)
+res <- matrix(0,vcount(shark_igraph),13)#
+  res[,1] <- igraph::degree(shark_igraph)#
+  res[,2] <- igraph::betweenness(shark_igraph)#
+  #res[,3] <- igraph::closeness(g)#
+  res[,3] <- igraph::eigen_centrality(shark_igraph)$vector#
+  A <- get.adjacency(shark_igraph,sparse=F)#
+  res[,5] <- sna::flowbet(A)#
+  res[,6] <- sna::loadcent(A)#
+  res[,7] <- sna::gilschmidt(A)#
+  res[,8] <- sna::infocent(A)#
+  res[,9] <- sna::stresscent(A)#
+#
+  res[,10] <- CINNA::dangalchev_closeness_centrality(g)#
+  res[,11] <- CINNA::harmonic_centrality(g)#
+  res[,12] <- 1/CINNA::local_bridging_centrality(g)#
+  apply(res,2,function(x) round(x,8))
+res <- matrix(0,vcount(shark_igraph),13)#
+  res[,1] <- igraph::degree(shark_igraph)#
+  res[,2] <- igraph::betweenness(shark_igraph)#
+  #res[,3] <- igraph::closeness(g)#
+  res[,3] <- igraph::eigen_centrality(shark_igraph)$vector#
+  A <- get.adjacency(shark_igraph,sparse=F)#
+  res[,5] <- sna::flowbet(A)#
+  res[,6] <- sna::loadcent(A)#
+  res[,7] <- sna::gilschmidt(A)#
+  res[,8] <- sna::infocent(A)#
+  res[,9] <- sna::stresscent(A)#
+#
+  res[,10] <- CINNA::dangalchev_closeness_centrality(shark_igraph)#
+  res[,11] <- CINNA::harmonic_centrality(shark_igraph)#
+  res[,12] <- 1/CINNA::local_bridging_centrality(shark_igraph)#
+  apply(res,2,function(x) round(x,8))
+res1 <-  apply(res,2,function(x) round(x,8))
+res <- matrix(0,vcount(shark_igraph),11)#
+  res[,1] <- igraph::degree(shark_igraph)#
+  res[,2] <- igraph::betweenness(shark_igraph)#
+  #res[,3] <- igraph::closeness(g)#
+  res[,3] <- igraph::eigen_centrality(shark_igraph)$vector#
+  A <- get.adjacency(shark_igraph,sparse=F)#
+  res[,4] <- sna::flowbet(A)#
+  res[,5] <- sna::loadcent(A)#
+  res[,6] <- sna::gilschmidt(A)#
+  res[,7] <- sna::infocent(A)#
+  res[,8] <- sna::stresscent(A)#
+#
+  res[,9] <- CINNA::dangalchev_closeness_centrality(shark_igraph)#
+  res[,10] <- CINNA::harmonic_centrality(shark_igraph)#
+  res[,11] <- 1/CINNA::local_bridging_centrality(shark_igraph)#
+ res1 <-  apply(res,2,function(x) round(x,8))
+res1
+which.max<- function(x) which(max(x)==x)#
+#
+c(apply(res1, 2, which.max))
+table(c(apply(res1, 2, which.max)))
+vector(apply(res1, 2, which.max))
+apply(res1, 2, which.max)
+nodes[c(48,38,29),]
+edges
+subset(edges, to=="48")
+shark_igraph <- graph_from_data_frame(d = edges, vertices = nodes, directed = FALSE)
+res <- matrix(0,vcount(shark_igraph),11)#
+  res[,1] <- igraph::degree(shark_igraph)#
+  res[,2] <- igraph::betweenness(shark_igraph)#
+  #res[,3] <- igraph::closeness(g)#
+  res[,3] <- igraph::eigen_centrality(shark_igraph)$vector#
+  A <- get.adjacency(shark_igraph,sparse=F)#
+  res[,4] <- sna::flowbet(A)#
+  res[,5] <- sna::loadcent(A)#
+  res[,6] <- sna::gilschmidt(A)#
+  res[,7] <- sna::infocent(A)#
+  res[,8] <- sna::stresscent(A)#
+#
+  res[,9] <- CINNA::dangalchev_closeness_centrality(shark_igraph)#
+  res[,10] <- CINNA::harmonic_centrality(shark_igraph)#
+  res[,11] <- 1/CINNA::local_bridging_centrality(shark_igraph)#
+ res1 <-  apply(res,2,function(x) round(x,8))#
+which.max<- function(x) which(max(x)==x)#
+#
+apply(res1, 2, which.max)
+nodes[c(48,38,29, 26, 39),]
+plot(shark_igraph)
+res[order(res[,2]),2]
+res1[,2][order(res1[,2])]
+order(res1[,2])
+res1[,2][order(-res1[,2])]
+cbind(nodes,res1[,2])[order(-res1[,2])]
+cbind(nodes,res1[,2])
+cbind(nodes,res1[,2])[order(-res1[,2]),]
+apply(res1, 2, which.max)
+cbind(nodes,res1[,3])[order(-res1[,3]),]
+cbind(nodes,res1[,1])[order(-res1[,1]),]
+apply(res1, 2, which.max)
+co.out.Site
+par.out_site<-pair.attributes(co.out.Site)# for all species
+par.out_site
+biome<-importShapefile("/Users/gjosgood/Downloads/terr-ecoregions-TNC/tnc_terr_ecoregions.shp")
+library(maptools)#
+library(maps)#
+library(PBSmapping)#
+library(mapproj)#
+library(sp)
+biome<-importShapefile("/Users/gjosgood/Downloads/terr-ecoregions-TNC/tnc_terr_ecoregions.shp")
+plotPolys(biome)
+library(chron)#
+library(ncdf4)#
+library(here)#
+#
+#read in Cocos to put in temperature column#
+cocos<-read.csv(here("Data/Cocos_Updated.csv"), stringsAsFactors=F, header=TRUE) #read in updated data#
+cocos$SST<-rep(NA, nrow(cocos)) #make empty column to which to add SST#
+#
+#Cocos lat and long ranges#
+cocos_lat<-c(5.49,5.58)#
+cocos_lon<-c(-87.11,-87.02)#
+#Read in the daily temperature data for each year in a for loop and extract for each day, subseting to get that around Cocos Island#
+#
+for (i in 1:nrow(cocos)) {#
+#
+  year_interest<-cocos$Year[i]#
+  ncin <- nc_open(here(paste("Daily_Temp_Files/sst.day.mean.", year_interest,".nc", sep="")))#
+#
+  sst<-ncvar_get(ncin, varid="sst")#
+  lat<-ncvar_get(ncin, varid="lat")#
+  lon<-ncvar_get(ncin, varid="lon")#
+  lon[lon>=180]<-lon[lon>=180]-360#
+  time<-as.Date(ncvar_get(ncin, varid="time"), origin="1800-01-01")                     #
+#
+  lon_index <- which.min(abs(lon - (cocos_lon[1])))#
+  lat_index <- which.min(abs(lat - cocos_lat[1]))#
+  date_index <- which(time==cocos$Date[i])#
+#
+  cocos$SST[i]<-sst[lon_index, lat_index, date_index] #temperature for Cocos each day for that year#
+  nc_close(ncin)#
+#
+}#
+#
+write.csv(cocos, here("Data/Cocos_Updated_Temperature.csv"))
+library(ggplot2)#
+library(gridExtra)#
+##analysis requried#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted-gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth-hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only#
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site#
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+print.site<-co.out.Site$results#
+#strongest interactions#
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167#
+#
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)#
+#
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05)
+library(cooccur)
+##analysis requried#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted-gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth-hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only#
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site#
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+print.site<-co.out.Site$results#
+#strongest interactions#
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167#
+#
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)#
+#
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05)
+sig_pos_chon
+nrow(Sit.)
+nrow(Site.Richness)
+all.results_chon
+par.out.chon_site$pos
+par.out_site<-pair.attributes(co.out.Site)# for all species
+par.out_site[order(-par.out_site$pos),]
+par.out.chon_site<-par.out_site[which(par.out_site$sppname%in%all.chon),] #Selecting all chondrichthyans
+par.out.chon_site
+library(cooccur)#
+library(vegan) # for shannon diversity function#
+library(ggplot2)#
+library(gridExtra)#
+library(tidyverse)#
+library(network)#
+library(igraph)#
+library(ggraph)#
+library(qgraph)#
+library(CINNA)#
+library(sna)
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+bruv<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_Data_SASC.csv", header=TRUE, stringsAsFactors=FALSE)
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted-gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth-hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site
+Site.Richness<-apply(Site.Richness, 2, function(x) {as.numeric(x>0)}) # Returns data frame to 0 and 1 only - ie yes if species EVER found there, no if NEVER found there
+t(Site.Richness)
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level
+library(ggplot2)#
+library(gridExtra)#
+library(cooccur)#
+#
+##analysis requried#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted-gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth-hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only#
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site#
+Site.Richness<-apply(Site.Richness, 2, function(x) {as.numeric(x>0)}) # Returns data frame to 0 and 1 only - ie yes if species EVER found there, no if NEVER found there#
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level
+#strongest interactions#
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167#
+#
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)#
+#
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05)
+sig_pos_chon
+all.results_chon
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05)
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05)
+sig_neg_chon
+sig_pos_chon
+###########################
+##Co-occurrence analysis###
+###########################
+#
+library(cooccur)#
+library(vegan) # for shannon diversity function#
+library(ggplot2)#
+library(gridExtra)#
+library(tidyverse)#
+library(network)#
+library(igraph)#
+library(ggraph)#
+library(qgraph)#
+library(CINNA)#
+library(sna)#
+#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+bruv<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_Data_SASC.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+common_names<-unique(bruv$Common_name)#
+#
+common_names<-common_names[-which(common_names%in%c("Snail", #
+    "Feathery sea pen", "Fanworm", #
+      "Eunicid worm", "Sea anemone", "Starfish", "Seastar", #
+      "Spiny starfish", "Sea cucumber", #
+      "Cape urchin", "Helmet shell", "Sea star", "Papery burnupena", #
+      "Sea slug", "Tick shell", "Red sea star","False plume anemone",#
+      "Topshell snail", "Topshell", "Turban shell", "Fat plough shell", #
+      "Root-mouthed jellyfish", "Sea urchin", "Jellyfish", "Purple-lipped dog whelk",#
+      "Euphausiids", "Unknown fish", "Larval fish", "Bait fish - sardine",#
+      "Common sand hermit", "Striated hermit"))]#
+#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted-gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth-hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only#
+#Use below for co-occurrence by site rather than BRUV drop (either could be informative):#
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site#
+Site.Richness<-apply(Site.Richness, 2, function(x) {as.numeric(x>0)}) # Returns data frame to 0 and 1 only - ie yes if species EVER found there, no if NEVER found there#
+#
+#####
+##Chondrichthyans considered as individual "species"#
+#####
+#common_names<-common_names[order(factor(common_names))]#
+#colnames(Site.Richness)<-common_names#
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level
+#####
+#
+Site.Richness.sp.interest<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.chon,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest<-cooccur(t(Site.Richness.sp.interest), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Shyshark co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_shyshark<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.shyshark,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_shyshark<-cooccur(t(Site.Richness.sp.interest_shyshark), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Large shark co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_large<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.large.shark,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_large<-cooccur(t(Site.Richness.sp.interest_large), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Batoid co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_batoid<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.batoid,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_batoid<-cooccur(t(Site.Richness.sp.interest_batoid), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level
+print.site<-co.out.Site$results
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167
+print.site_pos<-subset(print.site, p_gt<0.05)
+print.site_pos<-print.site_pos[order(-print.site_pos$effects),]
+print.site_pos[which(print.site_pos$sp2_name=="Red.stumpnose"),] #positive interactions
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)
+all.results_chon
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05)
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05)
+sig_pos_chon
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05) #
+nrow(sig_pos_chon) #number of significant positive associations#
+nrow(sig_neg_chon) #number of significant negative associations
+##analysis requried#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted-gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth-hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only#
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site#
+Site.Richness<-apply(Site.Richness, 2, function(x) {as.numeric(x>0)}) # Returns data frame to 0 and 1 only - ie yes if species EVER found there, no if NEVER found there#
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+print.site<-co.out.Site$results#
+#strongest interactions#
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167#
+#
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)#
+#
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05)
+sig_pos_chon
+sig_neg_chon
+ForPlot_effects_pos<-data.frame(species=c(as.character(sig_pos_chon$sp1_name), #
+  as.character(sig_pos_chon$sp2_name)), #
+  effects=c(sig_pos_chon$effects, sig_pos_chon$effects))#
+ForPlot_effects_pos<-subset(ForPlot_effects_pos, species%in%all.chon)#
+ForPlot_effects_pos<-subset(ForPlot_effects_pos, !species%in%c("Bronze.whaler", "Shortnose.spurdog", "Hammerhead.shark"))#
+#
+ForPlot_effects_neg<-data.frame(species=c(as.character(sig_neg_chon$sp1_name), #
+  as.character(sig_neg_chon$sp2_name)), #
+  effects=c(sig_neg_chon$effects, sig_neg_chon$effects))#
+ForPlot_effects_neg<-subset(ForPlot_effects_neg, species%in%all.chon)#
+ForPlot_effects_neg<-subset(ForPlot_effects_neg, !species%in%c("Bronze.whaler", "Shortnose.spurdog", "Hammerhead.shark"))#
+#
+pos_effect<-aggregate(effects~species, ForPlot_effects_pos, mean)#
+level_order<-as.character(pos_effect$species[order(-pos_effect$effects)])#
+neg_effect<-aggregate(effects~species, ForPlot_effects_neg, mean)#
+#
+#calculate sd for error bars:#
+error_chon_pos<-aggregate(effects~species, ForPlot_effects_pos, sd)#
+error_chon_neg<-aggregate(effects~species, ForPlot_effects_neg, sd)#
+error_chon<-c(error_chon_pos$effects, error_chon_neg$effects)#
+error_chon<-c(error_chon, rep(NA,4))#
+#
+ForBarPlot1<-data.frame(Species=c(as.character(pos_effect$species),#
+as.character(neg_effect$species)), Effect=c(pos_effect$effects, neg_effect$effects))#
+#
+#add in NA's for species without any significant negative associations:#
+ForBarPlot<-rbind(ForBarPlot1, data.frame(Species=c("Eagle ray", "Lesser guitarfish", #
+  "Short-tail stingray", "Soupfin shark"), Effect=rep(NA,4)))#
+#
+ForBarPlot$error_plot<-error_chon
+level_order
+ForPlot_effects_pos<-data.frame(species=c(as.character(sig_pos_chon$sp1_name), #
+  as.character(sig_pos_chon$sp2_name)), #
+  effects=c(sig_pos_chon$effects, sig_pos_chon$effects))#
+ForPlot_effects_pos<-subset(ForPlot_effects_pos, species%in%all.chon)#
+ForPlot_effects_pos<-subset(ForPlot_effects_pos, !species%in%c("Bronze.whaler", "Shortnose.spurdog", "Hammerhead.shark"))#
+#
+ForPlot_effects_neg<-data.frame(species=c(as.character(sig_neg_chon$sp1_name), #
+  as.character(sig_neg_chon$sp2_name)), #
+  effects=c(sig_neg_chon$effects, sig_neg_chon$effects))#
+ForPlot_effects_neg<-subset(ForPlot_effects_neg, species%in%all.chon)#
+ForPlot_effects_neg<-subset(ForPlot_effects_neg, !species%in%c("Bronze.whaler", "Shortnose.spurdog", "Hammerhead.shark"))#
+#
+pos_effect<-aggregate(effects~species, ForPlot_effects_pos, mean)#
+level_order<-as.character(pos_effect$species[order(-pos_effect$effects)])#
+neg_effect<-aggregate(effects~species, ForPlot_effects_neg, mean)#
+#
+#calculate sd for error bars:#
+error_chon_pos<-aggregate(effects~species, ForPlot_effects_pos, sd)#
+error_chon_neg<-aggregate(effects~species, ForPlot_effects_neg, sd)#
+error_chon<-c(error_chon_pos$effects, error_chon_neg$effects)#
+error_chon<-c(error_chon, rep(NA,4))#
+#
+ForBarPlot1<-data.frame(Species=c(as.character(pos_effect$species),#
+as.character(neg_effect$species)), Effect=c(pos_effect$effects, neg_effect$effects))#
+#
+#add in NA's for species without any significant negative associations:#
+ForBarPlot<-rbind(ForBarPlot1, data.frame(Species=c("Eagle.ray", "Lesser.guitarfish", #
+  "Short.tail.stingray", "Soupfin.shark"), Effect=rep(NA,4)))#
+#
+ForBarPlot$error_plot<-error_chon
+ForBarPlot
+#factor so plot x-labels occur in right order#
+#ForBoxPlot$Species<-factor(ForBoxPlot$Species, levels=level_order)#
+ForBarPlot$Species<-factor(ForBarPlot$Species, levels=level_order)#
+################################
+######For Part B:###############
+################################
+#
+#add means for all chondrichthyans, all shysharks, large sharks, batoids#
+pos_chon<-mean(sig_pos_chon$effects)#
+neg_chon<-mean(sig_neg_chon$effects)#
+sd_pos_chon<-sd(sig_pos_chon$effects)#
+sd_neg_chon<-sd(sig_neg_chon$effects)#
+#
+pos_shy<-mean(sig_pos_shy$effects)#
+neg_shy<-mean(sig_neg_shy$effects)#
+sd_pos_shy<-sd(sig_pos_shy$effects)#
+sd_neg_shy<-sd(sig_neg_shy$effects)#
+#
+pos_large<-mean(sig_pos_large$effects)#
+neg_large<-mean(sig_neg_large$effects)#
+sd_pos_large<-sd(sig_pos_large$effects)#
+sd_neg_large<-sd(sig_neg_large$effects)#
+#
+pos_batoid<-mean(sig_pos_batoid$effects)#
+neg_batoid<-mean(sig_neg_batoid$effects)#
+sd_pos_batoid<-sd(sig_pos_batoid$effects)#
+sd_neg_batoid<-sd(sig_neg_batoid$effects)
+#strongest interactions#
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167#
+#
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)#
+#
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05) #
+#
+all.results_shy<-subset(print.site, sp1_name%in%all.shyshark | sp2_name%in%all.shyshark)#
+#
+sig_pos_shy<-subset(all.results_shy, p_gt<0.05) #
+sig_neg_shy<-subset(all.results_shy, p_lt<0.05) #
+#
+all.results_large<-subset(print.site, sp1_name%in%all.large.shark | sp2_name%in%all.large.shark)#
+#
+sig_pos_large<-subset(all.results_large, p_gt<0.05) #
+sig_neg_large<-subset(all.results_large, p_lt<0.05) #
+#
+all.results_batoid<-subset(print.site, sp1_name%in%all.batoid| sp2_name%in%all.batoid)#
+#
+sig_pos_batoid<-subset(all.results_batoid, p_gt<0.05) #
+sig_neg_batoid<-subset(all.results_batoid, p_lt<0.05)
+#add means for all chondrichthyans, all shysharks, large sharks, batoids#
+pos_chon<-mean(sig_pos_chon$effects)#
+neg_chon<-mean(sig_neg_chon$effects)#
+sd_pos_chon<-sd(sig_pos_chon$effects)#
+sd_neg_chon<-sd(sig_neg_chon$effects)#
+#
+pos_shy<-mean(sig_pos_shy$effects)#
+neg_shy<-mean(sig_neg_shy$effects)#
+sd_pos_shy<-sd(sig_pos_shy$effects)#
+sd_neg_shy<-sd(sig_neg_shy$effects)#
+#
+pos_large<-mean(sig_pos_large$effects)#
+neg_large<-mean(sig_neg_large$effects)#
+sd_pos_large<-sd(sig_pos_large$effects)#
+sd_neg_large<-sd(sig_neg_large$effects)#
+#
+pos_batoid<-mean(sig_pos_batoid$effects)#
+neg_batoid<-mean(sig_neg_batoid$effects)#
+sd_pos_batoid<-sd(sig_pos_batoid$effects)#
+sd_neg_batoid<-sd(sig_neg_batoid$effects)
+pos_chon_interest<-mean(subset(sig_pos_chon, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+neg_chon_interest<-mean(subset(sig_neg_chon, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_pos_chon_interest<-sd(subset(sig_pos_chon, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_neg_chon_interest<-sd(subset(sig_neg_chon, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+#
+pos_shy_interest<-mean(subset(sig_pos_shy, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+neg_shy_interest<-mean(subset(sig_neg_shy, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_pos_shy_interest<-sd(subset(sig_pos_shy, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_neg_shy_interest<-sd(subset(sig_neg_shy, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+#
+pos_large_interest<-mean(subset(sig_pos_large, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+neg_large_interest<-mean(subset(sig_neg_large, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_pos_large_interest<-sd(subset(sig_pos_large, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_neg_large_interest<-sd(subset(sig_neg_large, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+#
+pos_batoid_interest<-mean(subset(sig_pos_batoid, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+neg_batoid_interest<-mean(subset(sig_neg_batoid, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_pos_batoid_interest<-sd(subset(sig_pos_batoid, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_neg_batoid_interest<-sd(subset(sig_neg_batoid, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)
+ForPartB<-data.frame(Group=rep(c("Chondrichthyans", "Catsharks", "Large sharks", "Batoids"),2), #
+  Effect=c(pos_chon, pos_shy, pos_large, pos_batoid, neg_chon, neg_shy, neg_large, neg_batoid), #
+  error_plot=c(sd_pos_chon, sd_pos_shy, sd_pos_large, sd_pos_batoid,#
+    sd_neg_chon, sd_neg_shy, sd_neg_large, sd_neg_batoid), Direction=c(rep("Positive", 4), #
+    rep("Negative", 4)))#
+#
+ForPartB$bar_max<-ForPartB$Effect+ForPartB$error_plot#
+ForPartB$bar_min<-ForPartB$Effect-ForPartB$error_plot#
+ForPartB_interest<-data.frame(Group=rep(c("Chondrichthyans", "Catsharks", "Large sharks", "Batoids"),2), #
+  Effect=c(pos_chon_interest, pos_shy_interest, #
+   pos_large_interest, pos_batoid_interest,#
+    neg_chon_interest, neg_shy_interest, #
+    neg_large_interest,  neg_batoid_interest), #
+  error_plot=c(sd_pos_chon_interest, sd_pos_shy_interest, #
+    sd_pos_large_interest, sd_pos_batoid_interest,#
+    sd_neg_chon_interest,  sd_neg_shy_interest, #
+    sd_neg_large_interest, sd_neg_batoid_interest), Direction=c(rep("Positive", 4), #
+    rep("Negative", 4)))#
+#
+ForPartB_interest$bar_max<-ForPartB_interest$Effect+ForPartB_interest$error_plot#
+ForPartB_interest$bar_min<-ForPartB_interest$Effect-ForPartB_interest$error_plot
+ForPlot_effects_pos_interest<-data.frame(species=c(as.character(sig_pos_interest$sp1_name), #
+  as.character(sig_pos_interest$sp2_name)), #
+  effects=c(sig_pos_interest$effects, sig_pos_interest$effects))#
+ForPlot_effects_pos_interest<-subset(ForPlot_effects_pos_interest, species%in%sp.of.interest)#
+#
+ForPlot_effects_neg_interest<-data.frame(species=c(as.character(sig_neg_interest$sp1_name), #
+  as.character(sig_neg_interest$sp2_name)), #
+  effects=c(sig_neg_interest$effects, sig_neg_interest$effects))#
+ForPlot_effects_neg_interest<-subset(ForPlot_effects_neg_interest, species%in%sp.of.interest)#
+#
+pos_effect_interest<-aggregate(effects~species, ForPlot_effects_pos_interest, mean)#
+pos_effect_interest<-rbind(pos_effect_interest, data.frame(species=c("Galjoen",#
+  "Yellowbelly rock cod"), effects=rep(NA,2))) #fill in missing species#
+#
+level_order_interest<-c(as.character(pos_effect_interest$species[order(-pos_effect_interest$effects)]),#
+  "Teleosts", "Crustaceans", "Cephalopods")#
+#
+neg_effect_interest<-aggregate(effects~species, ForPlot_effects_neg_interest, mean)#
+neg_effect_interest<-rbind(neg_effect_interest, data.frame(species=c("Galjoen", "Geelbek",#
+  "Janbruin", "Shad", "Silver kob", "Slender baardman", "Yellowbelly rock cod", "Zebra"), #
+       effects=rep(NA,8))) #fill in missing species
+all.results_interest<-subset(print.site, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)#
+#
+sig_pos_interest<-subset(all.results_interest, p_gt<0.05) #
+sig_neg_interest<-subset(all.results_interest, p_lt<0.05)
+ForPlot_effects_pos_interest<-data.frame(species=c(as.character(sig_pos_interest$sp1_name), #
+  as.character(sig_pos_interest$sp2_name)), #
+  effects=c(sig_pos_interest$effects, sig_pos_interest$effects))#
+ForPlot_effects_pos_interest<-subset(ForPlot_effects_pos_interest, species%in%sp.of.interest)#
+#
+ForPlot_effects_neg_interest<-data.frame(species=c(as.character(sig_neg_interest$sp1_name), #
+  as.character(sig_neg_interest$sp2_name)), #
+  effects=c(sig_neg_interest$effects, sig_neg_interest$effects))#
+ForPlot_effects_neg_interest<-subset(ForPlot_effects_neg_interest, species%in%sp.of.interest)#
+#
+pos_effect_interest<-aggregate(effects~species, ForPlot_effects_pos_interest, mean)#
+pos_effect_interest<-rbind(pos_effect_interest, data.frame(species=c("Galjoen",#
+  "Yellowbelly rock cod"), effects=rep(NA,2))) #fill in missing species#
+#
+level_order_interest<-c(as.character(pos_effect_interest$species[order(-pos_effect_interest$effects)]),#
+  "Teleosts", "Crustaceans", "Cephalopods")#
+#
+neg_effect_interest<-aggregate(effects~species, ForPlot_effects_neg_interest, mean)#
+neg_effect_interest<-rbind(neg_effect_interest, data.frame(species=c("Galjoen", "Geelbek",#
+  "Janbruin", "Shad", "Silver kob", "Slender baardman", "Yellowbelly rock cod", "Zebra"), #
+       effects=rep(NA,8))) #fill in missing species#
+#
+#add means for all teleosts, all crustaceans, all cephalopods to Figure 3b:#
+pos_tel<-mean(sig_pos_tel$effects)#
+neg_tel<-mean(sig_neg_tel$effects)#
+sd_pos_tel<-sd(sig_pos_tel$effects)#
+sd_neg_tel<-sd(sig_neg_tel$effects)#
+pos_crust<-mean(sig_pos_crust$effects)#
+neg_crust<-mean(sig_neg_crust$effects)#
+sd_pos_crust<-sd(sig_pos_crust$effects)#
+sd_neg_crust<-sd(sig_neg_crust$effects)#
+#
+pos_ceph<-mean(sig_pos_ceph$effects)#
+neg_ceph<-mean(sig_neg_ceph$effects)#
+sd_pos_ceph<-sd(sig_pos_ceph$effects)#
+sd_neg_ceph<-sd(sig_neg_ceph$effects)#
+#
+#calculate sd for error bars:#
+error_interest_pos<-aggregate(effects~species, ForPlot_effects_pos_interest, sd)#
+error_interest_pos<-c(error_interest_pos$effects, rep(NA,2), sd_pos_tel, sd_pos_crust, sd_pos_ceph)#
+error_interest_neg<-aggregate(effects~species, ForPlot_effects_neg_interest, sd)#
+error_interest_neg<-c(error_interest_neg$effects, rep(NA,8), sd_neg_tel, sd_neg_crust, sd_neg_ceph)#
+error_interest<-c(error_interest_pos, error_interest_neg)#
+#
+ForBarPlot_interest1<-data.frame(Species=c(as.character(pos_effect_interest$species),#
+  "Teleosts", "Crustaceans", "Cephalopods",#
+  as.character(neg_effect_interest$species), "Teleosts", "Crustaceans", "Cephalopods"), #
+  Effect=c(pos_effect_interest$effects, pos_tel, pos_crust, pos_ceph,#
+    neg_effect_interest$effects, neg_tel, neg_crust, neg_ceph), error_plot=error_interest)#
+#
+ForBarPlot_interest<-subset(ForBarPlot_interest1, !Species%in%c("Geelbek", "Shad", #
+  "Galjoen", "Yellowbelly rock cod")) #remove species seen only once#
+ForBarPlot_interest$Species<-factor(ForBarPlot_interest$Species, levels=level_order_interest)
+ForPlot_effects_pos_interest<-data.frame(species=c(as.character(sig_pos_interest$sp1_name), #
+  as.character(sig_pos_interest$sp2_name)), #
+  effects=c(sig_pos_interest$effects, sig_pos_interest$effects))#
+ForPlot_effects_pos_interest<-subset(ForPlot_effects_pos_interest, species%in%sp.of.interest)
+ForPlot_effects_neg_interest<-data.frame(species=c(as.character(sig_neg_interest$sp1_name), #
+  as.character(sig_neg_interest$sp2_name)), #
+  effects=c(sig_neg_interest$effects, sig_neg_interest$effects))#
+ForPlot_effects_neg_interest<-subset(ForPlot_effects_neg_interest, species%in%sp.of.interest)#
+#
+pos_effect_interest<-aggregate(effects~species, ForPlot_effects_pos_interest, mean)#
+pos_effect_interest<-rbind(pos_effect_interest, data.frame(species=c("Galjoen",#
+  "Yellowbelly rock cod"), effects=rep(NA,2))) #fill in missing species#
+#
+level_order_interest<-c(as.character(pos_effect_interest$species[order(-pos_effect_interest$effects)]),#
+  "Teleosts", "Crustaceans", "Cephalopods")#
+#
+neg_effect_interest<-aggregate(effects~species, ForPlot_effects_neg_interest, mean)#
+neg_effect_interest<-rbind(neg_effect_interest, data.frame(species=c("Galjoen", "Geelbek",#
+  "Janbruin", "Shad", "Silver kob", "Slender baardman", "Yellowbelly rock cod", "Zebra"), #
+       effects=rep(NA,8))) #fill in missing species
+pos_tel<-mean(sig_pos_tel$effects)#
+neg_tel<-mean(sig_neg_tel$effects)#
+sd_pos_tel<-sd(sig_pos_tel$effects)#
+sd_neg_tel<-sd(sig_neg_tel$effects)
+all.results_interest<-subset(print.site, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)#
+#
+sig_pos_interest<-subset(all.results_interest, p_gt<0.05) #
+sig_neg_interest<-subset(all.results_interest, p_lt<0.05) #
+#
+all.results_tel<-subset(print.site, sp1_name%in%all.teleost | sp2_name%in%all.teleost)#
+#
+sig_pos_tel<-subset(all.results_tel, p_gt<0.05) #
+sig_neg_tel<-subset(all.results_tel, p_lt<0.05) #
+all.results_ceph<-subset(print.site, sp1_name%in%all.ceph | sp2_name%in%all.ceph)#
+#
+sig_pos_ceph<-subset(all.results_ceph, p_gt<0.05) #
+sig_neg_ceph<-subset(all.results_ceph, p_lt<0.05) #
+all.results_crust<-subset(print.site, sp1_name%in%all.crust | sp2_name%in%all.crust)#
+#
+sig_pos_crust<-subset(all.results_crust, p_gt<0.05) #
+sig_neg_crust<-subset(all.results_crust, p_lt<0.05)
+#add means for all teleosts, all crustaceans, all cephalopods to Figure 3b:#
+pos_tel<-mean(sig_pos_tel$effects)#
+neg_tel<-mean(sig_neg_tel$effects)#
+sd_pos_tel<-sd(sig_pos_tel$effects)#
+sd_neg_tel<-sd(sig_neg_tel$effects)#
+pos_crust<-mean(sig_pos_crust$effects)#
+neg_crust<-mean(sig_neg_crust$effects)#
+sd_pos_crust<-sd(sig_pos_crust$effects)#
+sd_neg_crust<-sd(sig_neg_crust$effects)#
+#
+pos_ceph<-mean(sig_pos_ceph$effects)#
+neg_ceph<-mean(sig_neg_ceph$effects)#
+sd_pos_ceph<-sd(sig_pos_ceph$effects)#
+sd_neg_ceph<-sd(sig_neg_ceph$effects)#
+#
+#calculate sd for error bars:#
+error_interest_pos<-aggregate(effects~species, ForPlot_effects_pos_interest, sd)#
+error_interest_pos<-c(error_interest_pos$effects, rep(NA,2), sd_pos_tel, sd_pos_crust, sd_pos_ceph)#
+error_interest_neg<-aggregate(effects~species, ForPlot_effects_neg_interest, sd)#
+error_interest_neg<-c(error_interest_neg$effects, rep(NA,8), sd_neg_tel, sd_neg_crust, sd_neg_ceph)#
+error_interest<-c(error_interest_pos, error_interest_neg)#
+#
+ForBarPlot_interest1<-data.frame(Species=c(as.character(pos_effect_interest$species),#
+  "Teleosts", "Crustaceans", "Cephalopods",#
+  as.character(neg_effect_interest$species), "Teleosts", "Crustaceans", "Cephalopods"), #
+  Effect=c(pos_effect_interest$effects, pos_tel, pos_crust, pos_ceph,#
+    neg_effect_interest$effects, neg_tel, neg_crust, neg_ceph), error_plot=error_interest)#
+#
+ForBarPlot_interest<-subset(ForBarPlot_interest1, !Species%in%c("Geelbek", "Shad", #
+  "Galjoen", "Yellowbelly rock cod")) #remove species seen only once#
+ForBarPlot_interest$Species<-factor(ForBarPlot_interest$Species, levels=level_order_interest)
+############################
+########axis labels#########
+############################
+shark_order_names_fig3<-c("Dark catshark", "Leopard catshark", "Pyjama catshark", "Puffadder catshark",#
+  "Broadnose sevengill shark", "Biscuit skate", "Short-tail stingray", #
+ "Tiger catshark",  "Soupfin shark", "Smooth-hound shark","Spearnose skate",#
+  "Spotted-gully shark", "St. Joseph shark", "Eagle ray", "Lesser guitarfish")#
+#
+tel_names<-c("West coast rock lobster", "Red roman", "White stumpnose",#
+  "Red stumpnose","Red steenbras", "Blacktail", "Janbruin", #
+  "Slender baardman", "Silver kob", "Zebra", "Teleosts", "Crustaceans", "Cephalopods")#
+#
+part_b_order<-c("Chondrichthyans", "Catsharks", "Large sharks", "Batoids")#
+##########
+#Ensure labels will come out in right order:#
+#
+ForPartB$Group<-factor(ForPartB$Group, levels=part_b_order)#
+ForPartB_interest$Group<-factor(ForPartB_interest$Group, levels=part_b_order)#
+#
+ForPartB$Direction<-factor(ForPartB$Direction, levels=c("Positive", "Negative"))#
+ForPartB_interest$Direction<-factor(ForPartB_interest$Direction, levels=c("Positive", "Negative"))
+#################################
+#####code for plots:#############
+#################################
+g1<-ggplot(ForBarPlot, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey80",11), rep("grey30",15))#
+  ) + ylab("") + xlab("Species") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size =  16, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 16, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=14))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.8, hjust=1)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=shark_order_names_fig3, expand = c(0.07, 0)) +#
+  theme(axis.ticks.length=unit(-0.5, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(a)") + #
+  theme(plot.title = element_text(size = 16))+#
+   theme(plot.margin=unit(c(0.5,1.1,1.1,1.1),"cm"))#
+#
+   barwidth<-0.35#
+#
+  g2<-ggplot() +#
+  geom_bar(data=ForPartB, mapping=aes(x = as.numeric(Group), y = Effect, #
+    fill = Direction), #
+    stat = "identity", position = position_stack(), width=barwidth) + #
+  geom_bar(data=ForPartB_interest, mapping=aes(x = as.numeric(Group)+barwidth+0.01, y = Effect, #
+    fill = Direction), col="black", size=2,#
+    stat = "identity", position = position_stack(), width=barwidth) +#
+  scale_fill_manual(values = c("Positive" = "grey30", "Negative" = "grey80"))+#
+  ylab("Co-occurrence strength") + xlab("Group") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 16, hjust = 0.5, vjust = -4)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 16, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=14))  +#
+  theme(axis.text.x = element_text(angle = 0, vjust=-4)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  theme(legend.position = "none") +#
+  theme(axis.ticks.length=unit(-0.5, "cm")) +#
+  scale_x_continuous(labels=part_b_order, expand=c(0.07,0.05), breaks=c(1.2:4.2))+#
+  geom_errorbar(aes(ymin=ForPartB$bar_min, #
+    x=as.numeric(ForPartB$Group), ymax=ForPartB$bar_max), width=.2) + #
+  geom_errorbar(aes(ymin=ForPartB_interest$bar_min, #
+    x=c(as.numeric(ForPartB_interest$Group)+barwidth+0.01), #
+    ymax=ForPartB_interest$bar_max), width=.2)+#
+   ggtitle("(b)") + #
+    theme(plot.title = element_text(size = 16))+#
+   theme(plot.margin=unit(c(0.5,1.1,1.1,1.1),"cm"))#
+#
+g3<-ggplot(ForBarPlot_interest, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey30", 13), rep("grey80",9))) + #
+  ylab("") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 16, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 16, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=14))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.75, hjust=0.9)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=tel_names, expand=c(0.07,0)) +#
+  theme(axis.ticks.length=unit(-0.5, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(c)") + #
+    theme(plot.title = element_text(size = 16))+#
+   theme(plot.margin=unit(c(0.5,1.1,1.1,1.1),"cm"))
+grid.arrange(g1, g2, g3, nrow = 3)#
+grid.rect(width =  0.98, height = 0.98, gp = gpar(lwd = 2, col = "black", fill = NA))
+library(ggplot2)#
+library(gridExtra)
+#################################
+#####code for plots:#############
+#################################
+g1<-ggplot(ForBarPlot, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey80",15), rep("grey30",11))#
+  ) + ylab("") + xlab("Species") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size =  16, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 16, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=14))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.8, hjust=1)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=shark_order_names_fig3, expand = c(0.07, 0)) +#
+  theme(axis.ticks.length=unit(-0.5, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(a)") + #
+  theme(plot.title = element_text(size = 16))+#
+   theme(plot.margin=unit(c(0.5,1.1,1.1,1.1),"cm"))#
+#
+   barwidth<-0.35#
+#
+  g2<-ggplot() +#
+  geom_bar(data=ForPartB, mapping=aes(x = as.numeric(Group), y = Effect, #
+    fill = Direction), #
+    stat = "identity", position = position_stack(), width=barwidth) + #
+  geom_bar(data=ForPartB_interest, mapping=aes(x = as.numeric(Group)+barwidth+0.01, y = Effect, #
+    fill = Direction), col="black", size=2,#
+    stat = "identity", position = position_stack(), width=barwidth) +#
+  scale_fill_manual(values = c("Positive" = "grey30", "Negative" = "grey80"))+#
+  ylab("Co-occurrence strength") + xlab("Group") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 16, hjust = 0.5, vjust = -4)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 16, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=14))  +#
+  theme(axis.text.x = element_text(angle = 0, vjust=-4)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  theme(legend.position = "none") +#
+  theme(axis.ticks.length=unit(-0.5, "cm")) +#
+  scale_x_continuous(labels=part_b_order, expand=c(0.07,0.05), breaks=c(1.2:4.2))+#
+  geom_errorbar(aes(ymin=ForPartB$bar_min, #
+    x=as.numeric(ForPartB$Group), ymax=ForPartB$bar_max), width=.2) + #
+  geom_errorbar(aes(ymin=ForPartB_interest$bar_min, #
+    x=c(as.numeric(ForPartB_interest$Group)+barwidth+0.01), #
+    ymax=ForPartB_interest$bar_max), width=.2)+#
+   ggtitle("(b)") + #
+    theme(plot.title = element_text(size = 16))+#
+   theme(plot.margin=unit(c(0.5,1.1,1.1,1.1),"cm"))#
+#
+g3<-ggplot(ForBarPlot_interest, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey30", 13), rep("grey80",9))) + #
+  ylab("") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 16, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 16, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=14))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.75, hjust=0.9)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=tel_names, expand=c(0.07,0)) +#
+  theme(axis.ticks.length=unit(-0.5, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(c)") + #
+    theme(plot.title = element_text(size = 16))+#
+   theme(plot.margin=unit(c(0.5,1.1,1.1,1.1),"cm"))
+grid.arrange(g1, g2, g3, nrow = 3)#
+grid.rect(width =  0.98, height = 0.98, gp = gpar(lwd = 2, col = "black", fill = NA))
+#################################
+#####code for plots:#############
+#################################
+g1<-ggplot(ForBarPlot, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey30",15), rep("grey80",11))#
+  ) + ylab("") + xlab("Species") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size =  16, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 16, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=14))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.8, hjust=1)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=shark_order_names_fig3, expand = c(0.07, 0)) +#
+  theme(axis.ticks.length=unit(-0.5, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(a)") + #
+  theme(plot.title = element_text(size = 16))+#
+   theme(plot.margin=unit(c(0.5,1.1,1.1,1.1),"cm"))#
+#
+   barwidth<-0.35#
+#
+  g2<-ggplot() +#
+  geom_bar(data=ForPartB, mapping=aes(x = as.numeric(Group), y = Effect, #
+    fill = Direction), #
+    stat = "identity", position = position_stack(), width=barwidth) + #
+  geom_bar(data=ForPartB_interest, mapping=aes(x = as.numeric(Group)+barwidth+0.01, y = Effect, #
+    fill = Direction), col="black", size=2,#
+    stat = "identity", position = position_stack(), width=barwidth) +#
+  scale_fill_manual(values = c("Positive" = "grey30", "Negative" = "grey80"))+#
+  ylab("Co-occurrence strength") + xlab("Group") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 16, hjust = 0.5, vjust = -4)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 16, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=14))  +#
+  theme(axis.text.x = element_text(angle = 0, vjust=-4)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  theme(legend.position = "none") +#
+  theme(axis.ticks.length=unit(-0.5, "cm")) +#
+  scale_x_continuous(labels=part_b_order, expand=c(0.07,0.05), breaks=c(1.2:4.2))+#
+  geom_errorbar(aes(ymin=ForPartB$bar_min, #
+    x=as.numeric(ForPartB$Group), ymax=ForPartB$bar_max), width=.2) + #
+  geom_errorbar(aes(ymin=ForPartB_interest$bar_min, #
+    x=c(as.numeric(ForPartB_interest$Group)+barwidth+0.01), #
+    ymax=ForPartB_interest$bar_max), width=.2)+#
+   ggtitle("(b)") + #
+    theme(plot.title = element_text(size = 16))+#
+   theme(plot.margin=unit(c(0.5,1.1,1.1,1.1),"cm"))#
+#
+g3<-ggplot(ForBarPlot_interest, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey30", 13), rep("grey80",9))) + #
+  ylab("") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 16, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 16, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=14))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.75, hjust=0.9)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=tel_names, expand=c(0.07,0)) +#
+  theme(axis.ticks.length=unit(-0.5, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(c)") + #
+    theme(plot.title = element_text(size = 16))+#
+   theme(plot.margin=unit(c(0.5,1.1,1.1,1.1),"cm"))
+grid.arrange(g1, g2, g3, nrow = 3)#
+grid.rect(width =  0.98, height = 0.98, gp = gpar(lwd = 2, col = "black", fill = NA))
+ForPartB
+ForPartB_interest
+neg_large_interest
+sig_neg_large
+library(ggplot2)#
+library(gridExtra)#
+library(cooccur)#
+#
+##analysis requried#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted-gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth-hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site
+Site.Richness<-apply(Site.Richness, 2, function(x) {as.numeric(x>0)}) # Returns data frame to 0 and 1 only - ie yes if species EVER found there, no if NEVER found there
+dim(Site.Richness)
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level
+print.site<-co.out.Site$results
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05)
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05)
+all.results_shy<-subset(print.site, sp1_name%in%all.shyshark | sp2_name%in%all.shyshark)
+sig_pos_shy<-subset(all.results_shy, p_gt<0.05)
+sig_neg_shy<-subset(all.results_shy, p_lt<0.05)
+all.results_large<-subset(print.site, sp1_name%in%all.large.shark | sp2_name%in%all.large.shark)
+sig_pos_large<-subset(all.results_large, p_gt<0.05)
+sig_neg_large<-subset(all.results_large, p_lt<0.05)
+all.results_batoid<-subset(print.site, sp1_name%in%all.batoid| sp2_name%in%all.batoid)
+sig_pos_batoid<-subset(all.results_batoid, p_gt<0.05)
+sig_neg_batoid<-subset(all.results_batoid, p_lt<0.05)
+all.results_interest<-subset(print.site, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)
+sig_pos_interest<-subset(all.results_interest, p_gt<0.05)
+sig_neg_interest<-subset(all.results_interest, p_lt<0.05)
+all.results_tel<-subset(print.site, sp1_name%in%all.teleost | sp2_name%in%all.teleost)
+sig_pos_tel<-subset(all.results_tel, p_gt<0.05)
+sig_neg_tel<-subset(all.results_tel, p_lt<0.05)
+all.results_ceph<-subset(print.site, sp1_name%in%all.ceph | sp2_name%in%all.ceph)
+sig_pos_ceph<-subset(all.results_ceph, p_gt<0.05)
+sig_neg_ceph<-subset(all.results_ceph, p_lt<0.05)
+all.results_crust<-subset(print.site, sp1_name%in%all.crust | sp2_name%in%all.crust)
+sig_pos_crust<-subset(all.results_crust, p_gt<0.05)
+sig_neg_crust<-subset(all.results_crust, p_lt<0.05)
+ForPlot_effects_pos<-data.frame(species=c(as.character(sig_pos_chon$sp1_name), #
+  as.character(sig_pos_chon$sp2_name)), #
+  effects=c(sig_pos_chon$effects, sig_pos_chon$effects))#
+ForPlot_effects_pos<-subset(ForPlot_effects_pos, species%in%all.chon)#
+ForPlot_effects_pos<-subset(ForPlot_effects_pos, !species%in%c("Bronze.whaler", "Shortnose.spurdog", "Hammerhead.shark"))#
+#
+ForPlot_effects_neg<-data.frame(species=c(as.character(sig_neg_chon$sp1_name), #
+  as.character(sig_neg_chon$sp2_name)), #
+  effects=c(sig_neg_chon$effects, sig_neg_chon$effects))#
+ForPlot_effects_neg<-subset(ForPlot_effects_neg, species%in%all.chon)#
+ForPlot_effects_neg<-subset(ForPlot_effects_neg, !species%in%c("Bronze.whaler", "Shortnose.spurdog", "Hammerhead.shark"))#
+#
+pos_effect<-aggregate(effects~species, ForPlot_effects_pos, mean)#
+level_order<-as.character(pos_effect$species[order(-pos_effect$effects)])#
+neg_effect<-aggregate(effects~species, ForPlot_effects_neg, mean)#
+#
+#calculate sd for error bars:#
+error_chon_pos<-aggregate(effects~species, ForPlot_effects_pos, sd)#
+error_chon_neg<-aggregate(effects~species, ForPlot_effects_neg, sd)#
+error_chon<-c(error_chon_pos$effects, error_chon_neg$effects)#
+error_chon<-c(error_chon, rep(NA,4))#
+#
+ForBarPlot1<-data.frame(Species=c(as.character(pos_effect$species),#
+as.character(neg_effect$species)), Effect=c(pos_effect$effects, neg_effect$effects))#
+#
+#add in NA's for species without any significant negative associations:#
+ForBarPlot<-rbind(ForBarPlot1, data.frame(Species=c("Eagle.ray", "Lesser.guitarfish", #
+  "Short.tail.stingray", "Soupfin.shark"), Effect=rep(NA,4)))#
+#
+ForBarPlot$error_plot<-error_chon
+ForBarPlot$Species<-factor(ForBarPlot$Species, levels=level_order)
+#add means for all chondrichthyans, all shysharks, large sharks, batoids#
+pos_chon<-mean(sig_pos_chon$effects)#
+neg_chon<-mean(sig_neg_chon$effects)#
+sd_pos_chon<-sd(sig_pos_chon$effects)#
+sd_neg_chon<-sd(sig_neg_chon$effects)#
+#
+pos_shy<-mean(sig_pos_shy$effects)#
+neg_shy<-mean(sig_neg_shy$effects)#
+sd_pos_shy<-sd(sig_pos_shy$effects)#
+sd_neg_shy<-sd(sig_neg_shy$effects)
+pos_large<-mean(sig_pos_large$effects)
+pos_large
+sig_pos_large
+sig_neg_large
+nrow(sig_pos_chon) #number of significant positive associations
+nrow(sig_neg_chon) #number of significant negative associations
+52/nrow(all.results_chon)#
+144/nrow(all.results_chon)
+range(all.results_chon$effects)
+mean(par.out.chon_site$pos)
+par.out.chon_site<-par.out_site[which(par.out_site$sppname%in%all.chon),] #Selecting all chondrichthyans #
+mean(par.out.chon_site$pos)
+par.out_site<-pair.attributes(co.out.Site)# for all species#
+#par.out_site[order(-par.out_site$pos),]#
+#####################################################
+####for chondrichthyans##############################
+#####################################################
+par.out.chon_site<-par.out_site[which(par.out_site$sppname%in%all.chon),] #Selecting all chondrichthyans #
+mean(par.out.chon_site$pos)
+#manual effect sizes - just significant associations#
+#for chondrichthyans:#
+sig_pos_chon$effects<-(sig_pos_chon$obs_cooccur-sig_pos_chon$exp_cooccur)/167#
+sig_neg_chon$effects<-(sig_neg_chon$obs_cooccur-sig_neg_chon$exp_cooccur)/167#
+#
+#for shysharks:#
+sig_pos_shy$effects<-(sig_pos_shy$obs_cooccur-sig_pos_shy$exp_cooccur)/167#
+sig_neg_shy$effects<-(sig_neg_shy$obs_cooccur-sig_neg_shy$exp_cooccur)/167#
+#
+#for large sharks:#
+sig_pos_large$effects<-(sig_pos_large$obs_cooccur-sig_pos_large$exp_cooccur)/167#
+sig_neg_large$effects<-(sig_neg_large$obs_cooccur-sig_neg_large$exp_cooccur)/167#
+#
+#for batoids:#
+sig_pos_batoid$effects<-(sig_pos_batoid$obs_cooccur-sig_pos_batoid$exp_cooccur)/167#
+sig_neg_batoid$effects<-(sig_neg_batoid$obs_cooccur-sig_neg_batoid$exp_cooccur)/167#
+#
+#For species of conservation interest:#
+sig_pos_interest$effects<-(sig_pos_interest$obs_cooccur-sig_pos_interest$exp_cooccur)/167#
+sig_neg_interest$effects<-(sig_neg_interest$obs_cooccur-sig_neg_interest$exp_cooccur)/167#
+#
+#For teleosts:#
+sig_pos_tel$effects<-(sig_pos_tel$obs_cooccur-sig_pos_tel$exp_cooccur)/167#
+sig_neg_tel$effects<-(sig_neg_tel$obs_cooccur-sig_neg_tel$exp_cooccur)/167#
+#
+#For crustaceans:#
+sig_pos_crust$effects<-(sig_pos_crust$obs_cooccur-sig_pos_crust$exp_cooccur)/167#
+sig_neg_crust$effects<-(sig_neg_crust$obs_cooccur-sig_neg_crust$exp_cooccur)/167#
+#
+#For cephalopods:#
+sig_pos_ceph$effects<-(sig_pos_ceph$obs_cooccur-sig_pos_ceph$exp_cooccur)/167#
+sig_neg_ceph$effects<-(sig_neg_ceph$obs_cooccur-sig_neg_ceph$exp_cooccur)/167
+mean(sig_pos_chon$effects)
+sd(sig_pos_chon$effects)
+mean(par.out.chon_site$pos)
+par.out.chon_site
+sig_neg_large
+###########################
+##Co-occurrence analysis###
+###########################
+#
+library(cooccur)#
+library(vegan) # for shannon diversity function#
+library(ggplot2)#
+library(gridExtra)#
+library(tidyverse)#
+library(network)#
+library(igraph)#
+library(ggraph)#
+library(qgraph)#
+library(CINNA)#
+library(sna)#
+#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted-gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth-hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only#
+#Use below for co-occurrence by site rather than BRUV drop (either could be informative):#
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site#
+Site.Richness<-apply(Site.Richness, 2, function(x) {as.numeric(x>0)}) # Returns data frame to 0 and 1 only - ie yes if species EVER found there, no if NEVER found there#
+#
+#####
+##Chondrichthyans considered as individual "species"#
+#####
+#common_names<-common_names[order(factor(common_names))]#
+#colnames(Site.Richness)<-common_names#
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#####
+##Chondrichthyan co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.chon,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest<-cooccur(t(Site.Richness.sp.interest), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Shyshark co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_shyshark<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.shyshark,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_shyshark<-cooccur(t(Site.Richness.sp.interest_shyshark), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Large shark co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_large<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.large.shark,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_large<-cooccur(t(Site.Richness.sp.interest_large), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Batoid co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_batoid<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.batoid,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_batoid<-cooccur(t(Site.Richness.sp.interest_batoid), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+############################################
+##########Question 1########################
+############################################
+#
+###########################################  #
+#Number of associations:####################
+########################################### #
+#
+###########################
+####per species groups:####
+###########################
+#for all chondrichthyans#
+#
+print.site<-co.out.Site$results#
+#strongest interactions#
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167#
+#
+print.site_pos<-subset(print.site, p_gt<0.05) #
+print.site_pos<-print.site_pos[order(-print.site_pos$effects),]#
+print.site_pos[which(print.site_pos$sp2_name=="Red.stumpnose"),] #positive interactions#
+#
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)#
+#
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05) #
+nrow(sig_pos_chon) #number of significant positive associations#
+nrow(sig_neg_chon) #number of significant negative associations#
+#
+(nrow(all.results_chon)-nrow(sig_pos_chon)-nrow(sig_neg_chon))#
+#
+52/nrow(all.results_chon)#
+144/nrow(all.results_chon)#
+#
+hist(subset(print.site, sp1_name=="Dark.shyshark")$effects)#
+range(all.results_chon$effects)#
+#
+#for all chondrichthyans relative to species of interest#
+#
+all.results_int1<-subset(print.site, sp1_name%in%all.chon & sp2_name%in%sp.of.interest)#
+all.results_int2<-subset(print.site, sp1_name%in%sp.of.interest & sp2_name%in%all.chon)#
+#
+all.results_int<-rbind(all.results_int1, all.results_int2)#
+#
+sig_pos_int<-subset(all.results_int, p_gt<0.05) #
+#
+sig_neg_int<-subset(all.results_int, p_lt<0.05) #
+#
+nrow(sig_pos_int)/nrow(all.results_int) #percent of significant positive associations#
+nrow(sig_neg_int)/nrow(all.results_int) #percent of significant negative associations#
+#
+(nrow(all.results_int)-nrow(sig_pos_int)-nrow(sig_neg_int))/nrow(all.results_int)#
+#for species of interest#
+#
+all.results_interest<-subset(print.site, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)#
+#
+sig_pos_interest<-subset(all.results_interest, p_gt<0.05) #
+sig_neg_interest<-subset(all.results_interest, p_lt<0.05) #
+nrow(sig_pos_interest) #number of significant positive associations#
+nrow(sig_neg_interest) #number of significant negative associations#
+#
+nrow(all.results_interest)-nrow(sig_pos_interest)-nrow(sig_neg_interest)#
+#
+#for teleosts#
+#
+all.results_tel<-subset(print.site, sp1_name%in%all.teleost | sp2_name%in%all.teleost)#
+#
+sig_pos_tel<-subset(all.results_tel, p_gt<0.05) #
+sig_neg_tel<-subset(all.results_tel, p_lt<0.05) #
+nrow(sig_pos_tel)/nrow(all.results_tel) #number of significant positive associations#
+nrow(sig_neg_tel)/nrow(all.results_tel) #number of significant negative associations#
+#
+nrow(all.results_tel)-nrow(sig_pos_tel)-nrow(sig_neg_tel)#
+#
+#for cephalopods#
+#
+all.results_ceph<-subset(print.site, sp1_name%in%all.ceph | sp2_name%in%all.ceph)#
+#
+sig_pos_ceph<-subset(all.results_ceph, p_gt<0.05) #
+sig_neg_ceph<-subset(all.results_ceph, p_lt<0.05) #
+nrow(sig_pos_ceph) #number of significant positive associations#
+nrow(sig_neg_ceph) #number of significant negative associations#
+#
+nrow(all.results_ceph)-nrow(sig_pos_ceph)-nrow(sig_neg_ceph)#
+#
+#for crustaceans#
+#
+all.results_crust<-subset(print.site, sp1_name%in%all.crust | sp2_name%in%all.crust)#
+#
+sig_pos_crust<-subset(all.results_crust, p_gt<0.05) #
+sig_neg_crust<-subset(all.results_crust, p_lt<0.05) #
+nrow(sig_pos_crust) #number of significant positive associations#
+nrow(sig_neg_crust) #number of significant negative associations#
+#
+nrow(all.results_crust)-nrow(sig_pos_crust)-nrow(sig_neg_crust)#
+#
+#for shysharks#
+#
+all.results_shy<-subset(print.site, sp1_name%in%all.shyshark | sp2_name%in%all.shyshark)#
+#
+sig_pos_shy<-subset(all.results_shy, p_gt<0.05) #
+sig_neg_shy<-subset(all.results_shy, p_lt<0.05) #
+nrow(sig_pos_shy) #number of significant positive associations#
+nrow(sig_neg_shy) #number of significant negative associations#
+#
+nrow(all.results_shy)-nrow(sig_pos_shy)-nrow(sig_neg_shy)#
+#
+#for large sharks#
+#
+all.results_large<-subset(print.site, sp1_name%in%all.large.shark | sp2_name%in%all.large.shark)#
+#
+sig_pos_large<-subset(all.results_large, p_gt<0.05) #
+sig_neg_large<-subset(all.results_large, p_lt<0.05) #
+nrow(sig_pos_large) #number of significant positive associations#
+nrow(sig_neg_large) #number of significant negative associations#
+#
+nrow(all.results_large)-nrow(sig_pos_large)-nrow(sig_neg_large)#
+#
+#for batoids#
+#
+all.results_batoid<-subset(print.site, sp1_name%in%all.batoid| sp2_name%in%all.batoid)#
+#
+sig_pos_batoid<-subset(all.results_batoid, p_gt<0.05) #
+sig_neg_batoid<-subset(all.results_batoid, p_lt<0.05) #
+nrow(sig_pos_batoid) #number of significant positive associations#
+nrow(sig_neg_batoid) #number of significant negative associations#
+#
+nrow(all.results_batoid)-nrow(sig_pos_batoid)-nrow(sig_neg_batoid)
+par.out_site<-pair.attributes(co.out.Site)# for all species
+par.out.chon_site<-par.out_site[which(par.out_site$sppname%in%all.chon),] #Selecting all chondrichthyans #
+#
+rowSums(par.out.chon_site[,4:6])
+sig_pos_chon
+###########################
+##Co-occurrence analysis###
+###########################
+#
+library(cooccur)#
+library(vegan) # for shannon diversity function#
+library(ggplot2)#
+library(gridExtra)#
+library(tidyverse)#
+library(network)#
+library(igraph)#
+library(ggraph)#
+library(qgraph)#
+library(CINNA)#
+library(sna)#
+#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted-gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth-hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only#
+#Use below for co-occurrence by site rather than BRUV drop (either could be informative):#
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site#
+Site.Richness<-apply(Site.Richness, 2, function(x) {as.numeric(x>0)}) # Returns data frame to 0 and 1 only - ie yes if species EVER found there, no if NEVER found there#
+#
+#####
+##Chondrichthyans considered as individual "species"#
+#####
+#common_names<-common_names[order(factor(common_names))]#
+#colnames(Site.Richness)<-common_names#
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#####
+##Chondrichthyan co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.chon,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest<-cooccur(t(Site.Richness.sp.interest), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Shyshark co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_shyshark<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.shyshark,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_shyshark<-cooccur(t(Site.Richness.sp.interest_shyshark), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Large shark co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_large<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.large.shark,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_large<-cooccur(t(Site.Richness.sp.interest_large), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Batoid co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_batoid<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.batoid,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_batoid<-cooccur(t(Site.Richness.sp.interest_batoid), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+############################################
+##########Question 1########################
+############################################
+#
+###########################################  #
+#Number of associations:####################
+########################################### #
+#
+###########################
+####per species groups:####
+###########################
+#for all chondrichthyans#
+#
+print.site<-co.out.Site$results#
+#strongest interactions#
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167#
+#
+print.site_pos<-subset(print.site, p_gt<0.05) #
+print.site_pos<-print.site_pos[order(-print.site_pos$effects),]#
+print.site_pos[which(print.site_pos$sp2_name=="Red.stumpnose"),] #positive interactions#
+#
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)#
+#
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05) #
+nrow(sig_pos_chon) #number of significant positive associations#
+nrow(sig_neg_chon) #number of significant negative associations#
+#
+(nrow(all.results_chon)-nrow(sig_pos_chon)-nrow(sig_neg_chon))#
+#
+52/nrow(all.results_chon)#
+144/nrow(all.results_chon)#
+#
+hist(subset(print.site, sp1_name=="Dark.shyshark")$effects)#
+range(all.results_chon$effects)#
+#
+#for all chondrichthyans relative to species of interest#
+#
+all.results_int1<-subset(print.site, sp1_name%in%all.chon & sp2_name%in%sp.of.interest)#
+all.results_int2<-subset(print.site, sp1_name%in%sp.of.interest & sp2_name%in%all.chon)#
+#
+all.results_int<-rbind(all.results_int1, all.results_int2)#
+#
+sig_pos_int<-subset(all.results_int, p_gt<0.05) #
+#
+sig_neg_int<-subset(all.results_int, p_lt<0.05) #
+#
+nrow(sig_pos_int)/nrow(all.results_int) #percent of significant positive associations#
+nrow(sig_neg_int)/nrow(all.results_int) #percent of significant negative associations#
+#
+(nrow(all.results_int)-nrow(sig_pos_int)-nrow(sig_neg_int))/nrow(all.results_int)#
+#for species of interest#
+#
+all.results_interest<-subset(print.site, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)#
+#
+sig_pos_interest<-subset(all.results_interest, p_gt<0.05) #
+sig_neg_interest<-subset(all.results_interest, p_lt<0.05) #
+nrow(sig_pos_interest) #number of significant positive associations#
+nrow(sig_neg_interest) #number of significant negative associations#
+#
+nrow(all.results_interest)-nrow(sig_pos_interest)-nrow(sig_neg_interest)#
+#
+#for teleosts#
+#
+all.results_tel<-subset(print.site, sp1_name%in%all.teleost | sp2_name%in%all.teleost)#
+#
+sig_pos_tel<-subset(all.results_tel, p_gt<0.05) #
+sig_neg_tel<-subset(all.results_tel, p_lt<0.05) #
+nrow(sig_pos_tel)/nrow(all.results_tel) #number of significant positive associations#
+nrow(sig_neg_tel)/nrow(all.results_tel) #number of significant negative associations#
+#
+nrow(all.results_tel)-nrow(sig_pos_tel)-nrow(sig_neg_tel)#
+#
+#for cephalopods#
+#
+all.results_ceph<-subset(print.site, sp1_name%in%all.ceph | sp2_name%in%all.ceph)#
+#
+sig_pos_ceph<-subset(all.results_ceph, p_gt<0.05) #
+sig_neg_ceph<-subset(all.results_ceph, p_lt<0.05) #
+nrow(sig_pos_ceph) #number of significant positive associations#
+nrow(sig_neg_ceph) #number of significant negative associations#
+#
+nrow(all.results_ceph)-nrow(sig_pos_ceph)-nrow(sig_neg_ceph)#
+#
+#for crustaceans#
+#
+all.results_crust<-subset(print.site, sp1_name%in%all.crust | sp2_name%in%all.crust)#
+#
+sig_pos_crust<-subset(all.results_crust, p_gt<0.05) #
+sig_neg_crust<-subset(all.results_crust, p_lt<0.05) #
+nrow(sig_pos_crust) #number of significant positive associations#
+nrow(sig_neg_crust) #number of significant negative associations#
+#
+nrow(all.results_crust)-nrow(sig_pos_crust)-nrow(sig_neg_crust)#
+#
+#for shysharks#
+#
+all.results_shy<-subset(print.site, sp1_name%in%all.shyshark | sp2_name%in%all.shyshark)#
+#
+sig_pos_shy<-subset(all.results_shy, p_gt<0.05) #
+sig_neg_shy<-subset(all.results_shy, p_lt<0.05) #
+nrow(sig_pos_shy) #number of significant positive associations#
+nrow(sig_neg_shy) #number of significant negative associations#
+#
+nrow(all.results_shy)-nrow(sig_pos_shy)-nrow(sig_neg_shy)#
+#
+#for large sharks#
+#
+all.results_large<-subset(print.site, sp1_name%in%all.large.shark | sp2_name%in%all.large.shark)#
+#
+sig_pos_large<-subset(all.results_large, p_gt<0.05) #
+sig_neg_large<-subset(all.results_large, p_lt<0.05) #
+nrow(sig_pos_large) #number of significant positive associations#
+nrow(sig_neg_large) #number of significant negative associations#
+#
+nrow(all.results_large)-nrow(sig_pos_large)-nrow(sig_neg_large)#
+#
+#for batoids#
+#
+all.results_batoid<-subset(print.site, sp1_name%in%all.batoid| sp2_name%in%all.batoid)#
+#
+sig_pos_batoid<-subset(all.results_batoid, p_gt<0.05) #
+sig_neg_batoid<-subset(all.results_batoid, p_lt<0.05) #
+nrow(sig_pos_batoid) #number of significant positive associations#
+nrow(sig_neg_batoid) #number of significant negative associations#
+#
+nrow(all.results_batoid)-nrow(sig_pos_batoid)-nrow(sig_neg_batoid)#
+#####################################################################################
+#####################individual species associations ################################
+#####################################################################################
+#
+par.out_site<-pair.attributes(co.out.Site)# for all species#
+#par.out_site[order(-par.out_site$pos),]#
+#####################################################
+####for chondrichthyans##############################
+#####################################################
+par.out.chon_site<-par.out_site[which(par.out_site$sppname%in%all.chon),] #Selecting all chondrichthyans #
+#
+rowSums(par.out.chon_site[,4:6])#
+#
+#####################################################
+####for shysharks and batoids and large sharks#######
+#####################################################
+par.out_site.shy<-par.out_site[which(par.out_site$sppname%in%all.shyshark),] #Selecting just shysharks for example#
+#
+par.out_site.batoid<-par.out_site[which(par.out_site$sppname%in%all.batoid),] #Selecting all batoids#
+#
+par.out_site.large<-par.out_site[which(par.out_site$sppname%in%all.large.shark),] #Selecting all large sharks#
+#
+############################
+#teleosts co-occurrence#
+###############################
+par.out.teleost_site<-par.out_site[which(par.out_site$sppname%in%all.teleost),] #Selecting all teleosts#
+#
+#species of interest#
+#
+par.out.interest_site<-par.out_site[which(par.out_site$sppname%in%sp.of.interest),] #Selecting all teleosts#
+#
+#par.out_site_group.tel[which(par.out_site_group.tel$sppname=="tel.site"),] #Selecting all teleosts#
+#
+############################
+#crustacean co-occurrence#
+###############################
+par.out.crust_site<-par.out_site[which(par.out_site$sppname%in%all.crust),] #Selecting all teleosts#
+#
+###############################
+#cephalopod co-occurrence#
+###############################
+par.out.ceph_site<-par.out_site[which(par.out_site$sppname%in%all.ceph),] #Selecting all teleosts
+sig_pos_chon
+all.results_chon
+mean(sig_pos_chon$effects)
+sd(sig_pos_chon$effects)
+mean(sig_neg_chon$effects)
+neg_large_interest
+sig_neg_large
+library(cooccur)#
+library(vegan) # for shannon diversity function#
+library(ggplot2)#
+library(gridExtra)#
+library(tidyverse)#
+library(network)#
+library(igraph)#
+library(ggraph)#
+library(qgraph)#
+library(CINNA)#
+library(sna)#
+#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted.gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth.hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only#
+#Use below for co-occurrence by site rather than BRUV drop (either could be informative):#
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site#
+Site.Richness<-apply(Site.Richness, 2, function(x) {as.numeric(x>0)}) # Returns data frame to 0 and 1 only - ie yes if species EVER found there, no if NEVER found there#
+#
+#####
+##Chondrichthyans considered as individual "species"#
+#####
+#common_names<-common_names[order(factor(common_names))]#
+#colnames(Site.Richness)<-common_names#
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#####
+##Chondrichthyan co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.chon,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest<-cooccur(t(Site.Richness.sp.interest), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Shyshark co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_shyshark<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.shyshark,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_shyshark<-cooccur(t(Site.Richness.sp.interest_shyshark), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Large shark co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_large<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.large.shark,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_large<-cooccur(t(Site.Richness.sp.interest_large), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+#####
+##Batoid co-occurrence relative to species of interest #
+#####
+#
+Site.Richness.sp.interest_batoid<-Site.Richness[,which(colnames(Site.Richness)%in%c(all.batoid,#
+  sp.of.interest))]#
+#
+co.out.Site.sp.interest_batoid<-cooccur(t(Site.Richness.sp.interest_batoid), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+############################################
+##########Question 1########################
+############################################
+#
+###########################################  #
+#Number of associations:####################
+########################################### #
+#
+###########################
+####per species groups:####
+###########################
+#for all chondrichthyans#
+#
+print.site<-co.out.Site$results#
+#strongest interactions#
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167#
+#
+print.site_pos<-subset(print.site, p_gt<0.05) #
+print.site_pos<-print.site_pos[order(-print.site_pos$effects),]#
+print.site_pos[which(print.site_pos$sp2_name=="Red.stumpnose"),] #positive interactions#
+#
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)#
+#
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05) #
+nrow(sig_pos_chon) #number of significant positive associations#
+nrow(sig_neg_chon) #number of significant negative associations#
+#
+(nrow(all.results_chon)-nrow(sig_pos_chon)-nrow(sig_neg_chon))#
+#
+52/nrow(all.results_chon)#
+144/nrow(all.results_chon)#
+#
+hist(subset(print.site, sp1_name=="Dark.shyshark")$effects)#
+range(all.results_chon$effects)#
+#
+#for all chondrichthyans relative to species of interest#
+#
+all.results_int1<-subset(print.site, sp1_name%in%all.chon & sp2_name%in%sp.of.interest)#
+all.results_int2<-subset(print.site, sp1_name%in%sp.of.interest & sp2_name%in%all.chon)#
+#
+all.results_int<-rbind(all.results_int1, all.results_int2)#
+#
+sig_pos_int<-subset(all.results_int, p_gt<0.05) #
+#
+sig_neg_int<-subset(all.results_int, p_lt<0.05) #
+#
+nrow(sig_pos_int)/nrow(all.results_int) #percent of significant positive associations#
+nrow(sig_neg_int)/nrow(all.results_int) #percent of significant negative associations#
+#
+(nrow(all.results_int)-nrow(sig_pos_int)-nrow(sig_neg_int))/nrow(all.results_int)#
+#for species of interest#
+#
+all.results_interest<-subset(print.site, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)#
+#
+sig_pos_interest<-subset(all.results_interest, p_gt<0.05) #
+sig_neg_interest<-subset(all.results_interest, p_lt<0.05) #
+nrow(sig_pos_interest) #number of significant positive associations#
+nrow(sig_neg_interest) #number of significant negative associations#
+#
+nrow(all.results_interest)-nrow(sig_pos_interest)-nrow(sig_neg_interest)#
+#
+#for teleosts#
+#
+all.results_tel<-subset(print.site, sp1_name%in%all.teleost | sp2_name%in%all.teleost)#
+#
+sig_pos_tel<-subset(all.results_tel, p_gt<0.05) #
+sig_neg_tel<-subset(all.results_tel, p_lt<0.05) #
+nrow(sig_pos_tel)/nrow(all.results_tel) #number of significant positive associations#
+nrow(sig_neg_tel)/nrow(all.results_tel) #number of significant negative associations#
+#
+nrow(all.results_tel)-nrow(sig_pos_tel)-nrow(sig_neg_tel)#
+#
+#for cephalopods#
+#
+all.results_ceph<-subset(print.site, sp1_name%in%all.ceph | sp2_name%in%all.ceph)#
+#
+sig_pos_ceph<-subset(all.results_ceph, p_gt<0.05) #
+sig_neg_ceph<-subset(all.results_ceph, p_lt<0.05) #
+nrow(sig_pos_ceph) #number of significant positive associations#
+nrow(sig_neg_ceph) #number of significant negative associations#
+#
+nrow(all.results_ceph)-nrow(sig_pos_ceph)-nrow(sig_neg_ceph)#
+#
+#for crustaceans#
+#
+all.results_crust<-subset(print.site, sp1_name%in%all.crust | sp2_name%in%all.crust)#
+#
+sig_pos_crust<-subset(all.results_crust, p_gt<0.05) #
+sig_neg_crust<-subset(all.results_crust, p_lt<0.05) #
+nrow(sig_pos_crust) #number of significant positive associations#
+nrow(sig_neg_crust) #number of significant negative associations#
+#
+nrow(all.results_crust)-nrow(sig_pos_crust)-nrow(sig_neg_crust)#
+#
+#for shysharks#
+#
+all.results_shy<-subset(print.site, sp1_name%in%all.shyshark | sp2_name%in%all.shyshark)#
+#
+sig_pos_shy<-subset(all.results_shy, p_gt<0.05) #
+sig_neg_shy<-subset(all.results_shy, p_lt<0.05) #
+nrow(sig_pos_shy) #number of significant positive associations#
+nrow(sig_neg_shy) #number of significant negative associations#
+#
+nrow(all.results_shy)-nrow(sig_pos_shy)-nrow(sig_neg_shy)#
+#
+#for large sharks#
+#
+all.results_large<-subset(print.site, sp1_name%in%all.large.shark | sp2_name%in%all.large.shark)#
+#
+sig_pos_large<-subset(all.results_large, p_gt<0.05) #
+sig_neg_large<-subset(all.results_large, p_lt<0.05) #
+nrow(sig_pos_large) #number of significant positive associations#
+nrow(sig_neg_large) #number of significant negative associations#
+#
+nrow(all.results_large)-nrow(sig_pos_large)-nrow(sig_neg_large)#
+#
+#for batoids#
+#
+all.results_batoid<-subset(print.site, sp1_name%in%all.batoid| sp2_name%in%all.batoid)#
+#
+sig_pos_batoid<-subset(all.results_batoid, p_gt<0.05) #
+sig_neg_batoid<-subset(all.results_batoid, p_lt<0.05) #
+nrow(sig_pos_batoid) #number of significant positive associations#
+nrow(sig_neg_batoid) #number of significant negative associations#
+#
+nrow(all.results_batoid)-nrow(sig_pos_batoid)-nrow(sig_neg_batoid)#
+#####################################################################################
+#####################individual species associations ################################
+#####################################################################################
+#
+par.out_site<-pair.attributes(co.out.Site)# for all species#
+#par.out_site[order(-par.out_site$pos),]#
+#####################################################
+####for chondrichthyans##############################
+#####################################################
+par.out.chon_site<-par.out_site[which(par.out_site$sppname%in%all.chon),] #Selecting all chondrichthyans #
+#
+rowSums(par.out.chon_site[,4:6])#
+#
+#####################################################
+####for shysharks and batoids and large sharks#######
+#####################################################
+par.out_site.shy<-par.out_site[which(par.out_site$sppname%in%all.shyshark),] #Selecting just shysharks for example#
+#
+par.out_site.batoid<-par.out_site[which(par.out_site$sppname%in%all.batoid),] #Selecting all batoids#
+#
+par.out_site.large<-par.out_site[which(par.out_site$sppname%in%all.large.shark),] #Selecting all large sharks#
+#
+############################
+#teleosts co-occurrence#
+###############################
+par.out.teleost_site<-par.out_site[which(par.out_site$sppname%in%all.teleost),] #Selecting all teleosts#
+#
+#species of interest#
+#
+par.out.interest_site<-par.out_site[which(par.out_site$sppname%in%sp.of.interest),] #Selecting all teleosts#
+#
+#par.out_site_group.tel[which(par.out_site_group.tel$sppname=="tel.site"),] #Selecting all teleosts#
+#
+############################
+#crustacean co-occurrence#
+###############################
+par.out.crust_site<-par.out_site[which(par.out_site$sppname%in%all.crust),] #Selecting all teleosts#
+#
+###############################
+#cephalopod co-occurrence#
+###############################
+par.out.ceph_site<-par.out_site[which(par.out_site$sppname%in%all.ceph),] #Selecting all teleosts#
+#####################################
+##effect sizes comparing averages:###
+#####################################
+#compare averages:#
+mean(sig_pos_chon$effects)#
+sd(sig_pos_chon$effects)#
+mean(sig_pos_interest$effects)#
+mean(sig_pos_tel$effects)#
+#
+mean(sig_neg_chon$effects)#
+sd(sig_neg_chon$effects)#
+range(sig_neg_chon$effects)#
+mean(sig_neg_interest$effects)#
+mean(sig_neg_tel$effects)#
+#
+##effect sizes for teleosts:#
+#
+Tel_effects_pos<-data.frame(species=c(as.character(sig_pos_tel$sp1_name), #
+  as.character(sig_pos_tel$sp2_name)), #
+  effects=c(sig_pos_tel$effects, sig_pos_tel$effects))#
+Tel_effects_pos<-subset(Tel_effects_pos, species%in%all.teleost)#
+#
+Tel_effects_neg<-data.frame(species=c(as.character(sig_neg_tel$sp1_name), #
+  as.character(sig_neg_tel$sp2_name)), #
+  effects=c(sig_neg_tel$effects, sig_neg_tel$effects))#
+Tel_effects_neg<-subset(Tel_effects_neg, species%in%all.teleost)#
+#
+pos_effect_tel<-aggregate(effects~species, Tel_effects_pos, mean)#
+level_order_tel<-as.character(pos_effect_tel$species[order(-pos_effect_tel$effects)])#
+neg_effect_tel<-aggregate(effects~species, Tel_effects_neg, mean)
+#################################################
+##########Preparing figures######################
+#################################################
+#
+par.out.chon_site_ordered<-par.out.chon_site[order(-par.out.chon_site$pos),]#
+#
+chon.plot<-t(par.out.chon_site_ordered[,-7])#
+colnames(chon.plot)<-as.character(par.out.chon_site_ordered[,7])#
+#
+chon.plot_percent<-chon.plot[1:3,-c(16:18)]#
+#
+chon.plot_percent<-cbind(chon.plot_percent, #
+  data.frame(all.chond=c(13.2,4.8,82), all.chond.interest=c(12.2,2.6,85)))#
+#
+chon.plot_percent<-chon.plot_percent[c(2,3,1),]#
+#
+##Figure 4
+shark_order_names<-c("Dark catshark", "Pyjama catshark", "Leopard catshark", "Puffadder catshark",#
+  "Broadnose sevengill shark", "Short-tail stingray", "Soupfin shark", "Tiger catshark", #
+  "Biscuit skate", "St. Joseph shark", "Smooth-hound shark", "Spotted-gully shark",  #
+  "Spearnose skate", "Eagle ray", "Lesser guitarfish", "All chondrichthyans", "All chondrichthyans\n to species of interest")
+##preparing figure 2b###
+mean_chondr_pos<-mean(par.out.chon_site$pos)#
+mean_chondr_neg<-mean(par.out.chon_site$neg)#
+mean_chondr_random<-mean(par.out.chon_site$rand)#
+#
+mean_shy_pos<-mean(par.out_site.shy$pos)#
+mean_shy_neg<-mean(par.out_site.shy$neg)#
+mean_shy_random<-mean(par.out_site.shy$rand)#
+#
+mean_large_pos<-mean(par.out_site.large$pos)#
+mean_large_neg<-mean(par.out_site.large$neg)#
+mean_large_random<-mean(par.out_site.large$rand)#
+#
+mean_batoid_pos<-mean(par.out_site.batoid$pos)#
+mean_batoid_neg<-mean(par.out_site.batoid$neg)#
+mean_batoid_random<-mean(par.out_site.batoid$rand)#
+#
+mean_tel_pos<-mean(par.out.teleost_site$pos)#
+mean_tel_neg<-mean(par.out.teleost_site$neg)#
+mean_tel_random<-mean(par.out.teleost_site$rand)#
+#
+mean_crust_pos<-mean(par.out.crust_site$pos)#
+mean_crust_neg<-mean(par.out.crust_site$neg)#
+mean_crust_random<-mean(par.out.crust_site$rand)#
+#
+mean_ceph_pos<-mean(par.out.ceph_site$pos)#
+mean_ceph_neg<-mean(par.out.ceph_site$neg)#
+mean_ceph_random<-mean(par.out.ceph_site$rand)#
+#
+plot_averages<-data.frame(All.chon=c(mean_chondr_neg, mean_chondr_random, #
+  mean_chondr_pos), all.shy=c(mean_shy_neg, mean_shy_random, mean_shy_pos),#
+   all.large=c(mean_large_neg, mean_large_random, #
+  mean_large_pos), all.batoid=c(mean_batoid_neg,mean_batoid_random, mean_batoid_pos), #
+  all.teleost=c(mean_tel_neg,mean_tel_random, mean_tel_pos), #
+  all.crust=c(mean_crust_neg,mean_crust_random,#
+ mean_crust_pos), all.ceph=c(mean_ceph_neg, mean_ceph_random, mean_ceph_pos))#
+#
+average_order_names<-c("Chondrichthyans", "Catsharks", "Large sharks",#
+  "Batoids", "Teleosts", "Crustaceans", "Cephalopods")#
+#
+#make the figure:#
+postscript(file="~/Dropbox/Osgood_et_al_2019_UmbrellaSpecies/Figures_Tables/Figure4.eps", width = 6.9, height = 7.5)#
+setEPS()#
+#
+par(mfrow=c(2,1), mar=c(7,5,1.4,5), oma=c(1,1,1,1), xpd=TRUE)#
+#(a)#
+barplot(as.matrix(chon.plot_percent), las=2, xaxt="n", ylab="Percent of pairings",#
+  col = c("#FFCC66", "dark gray", "light blue"), cex.axis=1, cex.lab=1,tck = 0.05)#
+text(c(seq(0.75, 18.75, 1.2),20.5), par("usr")[3]-3,#
+     srt = 40, adj= 1, xpd = TRUE,#
+     labels = shark_order_names, cex=1)#
+mtext("(a)", 3, line=0.2, adj=0, cex=1.2)#
+legend(20.4,100, c("Positive", "Random", "Negative"), fill=c("light blue","dark gray", "#FFCC66"), #
+  bty="n", cex=0.8)#
+#(b)#
+barplot(as.matrix(plot_averages), las=2, xaxt="n", #
+  ylab="Mean percent of pairings", ylim=c(0,100),#
+  col = c("#FFCC66", "dark gray", "light blue"), cex.axis=1, cex.lab=1,tck = 0.05)#
+text(seq(0.75, 9, 1.2), par("usr")[3]-1,#
+     srt = 40, adj= 1, xpd = TRUE,#
+     labels = average_order_names, cex=1)#
+mtext("(b)", 3, line=0.2, adj=0, cex=1.2)#
+box("inner", lwd=2)#
+#
+dev.off()
+library(ggplot2)#
+library(grid)#
+library(cooccur)#
+#
+##analysis requried#
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+##Remove species (ie invertebrates) that are not relevant/ are rare#
+#Remove krill from analysis#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Euphausiids")]#
+#
+#Remove pelagic larva/bait fish rarely seen, sea pens, and worms#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Unknown.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Larval.fish")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Bait.fish...sardine")]#
+#
+#Remove jellyfish, sea urchins, sea anemones, sea cucumbers, sea pens, and worms#
+#BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)=="Sea urchin")]#
+BRUV.MaxN<-BRUV.MaxN[, -which(names(BRUV.MaxN)%in%c("Snail", #
+  "Feathery.sea.pen", "Fanworm", #
+    "Eunicid.worm", "Sea.anemone", "Starfish", "Seastar", #
+    "Spiny.starfish", "Sea.cucumber", #
+    "Cape.urchin", "Helmet.shell", "Sea.star", "Papery.burnupena", #
+    "Sea.slug", "Tick.shell", "Red.sea.star","False.plume.anemone",#
+    "Topshell.snail", "Topshell", "Turban.shell", "Fat.plough.shell", #
+    "Root.mouthed.jellyfish", "Sea.urchin", "Jellyfish", "Purple.lipped.dog.whelk" ))]#
+#Matrix without rare species (ie 3 instances or less)#
+#MaxN_NoRare<-MaxN[,-which(colSums(BRUV.Richness)<=3)]#
+#
+#Setting the names of various ways of breaking up chondrichthyan class so can subset later - need periods as R deletes the spaces#
+all.chon<-c("Dark.shyshark", "Puffadder.shyshark", "Broadnose.sevengill.shark", #
+  "Leopard.catshark","Pyjama.shark", "Spearnose.skate", "Biscuit.skate", #
+                  "Eagle.ray", "Spotted.gully.shark",#
+                  "Bronze.whaler", "Smooth.hammerhead.shark", #
+                  "Smooth.hound.shark",  "St..Joseph.shark", "Tiger.catshark", #
+                    "Lesser.guitarfish", "Soupfin.shark", #
+                    "Shortnose.spurdog","Short.tail.stingray")#
+#
+all.shyshark<-c("Dark.shyshark", "Puffadder.shyshark", "Leopard.catshark", #
+  "Pyjama.shark", "Tiger.catshark")#
+#
+all.large.shark<-c("Broadnose.sevengill.shark", #
+          "Spotted.gully.shark",#
+               "Bronze.whaler", "Smooth.hammerhead.shark", #
+               "Smooth.hound.shark",  #
+                "Soupfin.shark")#
+#
+all.batoid<-c("Lesser.guitarfish", "Eagle.ray", "Biscuit.skate", #
+  "Spearnose.skate", "Short.tail.stingray")#
+#
+all.crust<-c("Cape.rock.crab", "Hermit.crab", "Masked.crab", "Masked.crab.sp2", #
+  "Sandflat.crab", "Three.spotted.swimming.crab", "West.coast.rock.lobster")#
+#
+all.ceph<-c("Common.octopus", "Chokka.squid")#
+#
+all.teleost<-c("Bank.steenbras", "Barehead.goby","Barred.fingerfin", "Beaked.sandfish",#
+  "Black.seacatfish", "Blacktail", "Blue.hottentot", "Bluefin.gurnard", "Cape.horse.mackerel",#
+      "Cape.sole", "Carpenter", "Evileye.blaasop", "Fransmadam", "Galjoen", "Geelbek", #
+      "Giant.yellowtail", "Hottentot", "Janbruin", "Jutjaw", "Longsnout.pipefish", "Panga",#
+      "Red.roman", "Red.steenbras", "Red.stumpnose", "Redfingers", "Shad", "Silver.kob",#
+      "Slender.baardman", "Snakelet", "Spinynose.horsefish", "Steentjie", "Strepie", #
+      "Super.klipfish", "Twotone.fingerfin", "White.seacatfish", "White.stumpnose", #
+      "Yellowback.fusilier", "Yellowbelly.rock.cod", "Zebra")#
+#
+sp.of.interest<-c("Red.steenbras", "Galjoen", "Geelbek", "Red.roman", #
+  "Red.stumpnose", "Janbruin", "Blacktail", "Shad", "Silver.kob", "Slender.baardman",#
+  "West.coast.rock.lobster", "White.stumpnose", "Yellowbelly.rock.cod", "Zebra")#
+#
+MaxN<-BRUV.MaxN[,-c(1:5)] # Creates abundance only data frame (remove "meta-data" columns)#
+#head(MaxN) #Check that I was successful by looking at first few rows#
+#
+BRUV.Richness<-apply(MaxN, 2, function(x) {as.numeric(x>0)}) # Create data frame that is presence/absence (0 and 1) only#
+Site.Richness<-aggregate(BRUV.Richness, by=list(env$Site), sum)[,-1] # total number of times each species found per site#
+Site.Richness<-apply(Site.Richness, 2, function(x) {as.numeric(x>0)}) # Returns data frame to 0 and 1 only - ie yes if species EVER found there, no if NEVER found there#
+co.out.Site<-cooccur(t(Site.Richness), spp_names=TRUE, type="spp_site", thresh=FALSE) # Do co-occur analysis based on site level#
+#
+print.site<-co.out.Site$results#
+#strongest interactions#
+print.site$effects<-(print.site$obs_cooccur-print.site$exp_cooccur)/167#
+#
+all.results_chon<-subset(print.site, sp1_name%in%all.chon | sp2_name%in%all.chon)#
+#
+sig_pos_chon<-subset(all.results_chon, p_gt<0.05) #
+sig_neg_chon<-subset(all.results_chon, p_lt<0.05) #
+#
+all.results_shy<-subset(print.site, sp1_name%in%all.shyshark | sp2_name%in%all.shyshark)#
+#
+sig_pos_shy<-subset(all.results_shy, p_gt<0.05) #
+sig_neg_shy<-subset(all.results_shy, p_lt<0.05) #
+#
+all.results_large<-subset(print.site, sp1_name%in%all.large.shark | sp2_name%in%all.large.shark)#
+#
+sig_pos_large<-subset(all.results_large, p_gt<0.05) #
+sig_neg_large<-subset(all.results_large, p_lt<0.05) #
+#
+all.results_batoid<-subset(print.site, sp1_name%in%all.batoid| sp2_name%in%all.batoid)#
+#
+sig_pos_batoid<-subset(all.results_batoid, p_gt<0.05) #
+sig_neg_batoid<-subset(all.results_batoid, p_lt<0.05) #
+all.results_interest<-subset(print.site, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)#
+#
+sig_pos_interest<-subset(all.results_interest, p_gt<0.05) #
+sig_neg_interest<-subset(all.results_interest, p_lt<0.05) #
+#
+all.results_tel<-subset(print.site, sp1_name%in%all.teleost | sp2_name%in%all.teleost)#
+#
+sig_pos_tel<-subset(all.results_tel, p_gt<0.05) #
+sig_neg_tel<-subset(all.results_tel, p_lt<0.05) #
+all.results_ceph<-subset(print.site, sp1_name%in%all.ceph | sp2_name%in%all.ceph)#
+#
+sig_pos_ceph<-subset(all.results_ceph, p_gt<0.05) #
+sig_neg_ceph<-subset(all.results_ceph, p_lt<0.05) #
+all.results_crust<-subset(print.site, sp1_name%in%all.crust | sp2_name%in%all.crust)#
+#
+sig_pos_crust<-subset(all.results_crust, p_gt<0.05) #
+sig_neg_crust<-subset(all.results_crust, p_lt<0.05)
+ForPlot_effects_pos<-data.frame(species=c(as.character(sig_pos_chon$sp1_name), #
+  as.character(sig_pos_chon$sp2_name)), #
+  effects=c(sig_pos_chon$effects, sig_pos_chon$effects))#
+ForPlot_effects_pos<-subset(ForPlot_effects_pos, species%in%all.chon)#
+ForPlot_effects_pos<-subset(ForPlot_effects_pos, !species%in%c("Bronze.whaler", "Shortnose.spurdog", "Hammerhead.shark"))#
+#
+ForPlot_effects_neg<-data.frame(species=c(as.character(sig_neg_chon$sp1_name), #
+  as.character(sig_neg_chon$sp2_name)), #
+  effects=c(sig_neg_chon$effects, sig_neg_chon$effects))#
+ForPlot_effects_neg<-subset(ForPlot_effects_neg, species%in%all.chon)#
+ForPlot_effects_neg<-subset(ForPlot_effects_neg, !species%in%c("Bronze.whaler", "Shortnose.spurdog", "Hammerhead.shark"))#
+#
+pos_effect<-aggregate(effects~species, ForPlot_effects_pos, mean)#
+level_order<-as.character(pos_effect$species[order(-pos_effect$effects)])#
+neg_effect<-aggregate(effects~species, ForPlot_effects_neg, mean)#
+#
+#calculate sd for error bars:#
+error_chon_pos<-aggregate(effects~species, ForPlot_effects_pos, sd)#
+error_chon_neg<-aggregate(effects~species, ForPlot_effects_neg, sd)#
+error_chon<-c(error_chon_pos$effects, error_chon_neg$effects)#
+error_chon<-c(error_chon, rep(NA,4))#
+#
+ForBarPlot1<-data.frame(Species=c(as.character(pos_effect$species),#
+as.character(neg_effect$species)), Effect=c(pos_effect$effects, neg_effect$effects))#
+#
+#add in NA's for species without any significant negative associations:#
+ForBarPlot<-rbind(ForBarPlot1, data.frame(Species=c("Eagle.ray", "Lesser.guitarfish", #
+  "Short.tail.stingray", "Soupfin.shark"), Effect=rep(NA,4)))#
+#
+ForBarPlot$error_plot<-error_chon#
+#
+#for boxplot:#
+#ForBoxPlot<-data.frame(Species=c(as.character(ForPlot_effects_pos$species),#
+#as.character(ForPlot_effects_neg$species)), Direction=c(rep("Positive", nrow(ForPlot_effects_pos)),#
+#rep("Negative", nrow(ForPlot_effects_neg))),#
+#Effect=c(ForPlot_effects_pos$effects, ForPlot_effects_neg$effects))#
+#
+#factor so plot x-labels occur in right order#
+#ForBoxPlot$Species<-factor(ForBoxPlot$Species, levels=level_order)#
+ForBarPlot$Species<-factor(ForBarPlot$Species, levels=level_order)#
+################################
+######For Part B:###############
+################################
+#
+#add means for all chondrichthyans, all shysharks, large sharks, batoids#
+pos_chon<-mean(sig_pos_chon$effects)#
+neg_chon<-mean(sig_neg_chon$effects)#
+sd_pos_chon<-sd(sig_pos_chon$effects)#
+sd_neg_chon<-sd(sig_neg_chon$effects)#
+#
+pos_shy<-mean(sig_pos_shy$effects)#
+neg_shy<-mean(sig_neg_shy$effects)#
+sd_pos_shy<-sd(sig_pos_shy$effects)#
+sd_neg_shy<-sd(sig_neg_shy$effects)#
+#
+pos_large<-mean(sig_pos_large$effects)#
+neg_large<-mean(sig_neg_large$effects)#
+sd_pos_large<-sd(sig_pos_large$effects)#
+sd_neg_large<-sd(sig_neg_large$effects)#
+#
+pos_batoid<-mean(sig_pos_batoid$effects)#
+neg_batoid<-mean(sig_neg_batoid$effects)#
+sd_pos_batoid<-sd(sig_pos_batoid$effects)#
+sd_neg_batoid<-sd(sig_neg_batoid$effects)#
+#
+#add means for all large sharks, all shysharks, large sharks, batoids for just links to speices of interest#
+#
+pos_chon_interest<-mean(subset(sig_pos_chon, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+neg_chon_interest<-mean(subset(sig_neg_chon, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_pos_chon_interest<-sd(subset(sig_pos_chon, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_neg_chon_interest<-sd(subset(sig_neg_chon, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+#
+pos_shy_interest<-mean(subset(sig_pos_shy, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+neg_shy_interest<-mean(subset(sig_neg_shy, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_pos_shy_interest<-sd(subset(sig_pos_shy, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_neg_shy_interest<-sd(subset(sig_neg_shy, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+#
+pos_large_interest<-mean(subset(sig_pos_large, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+neg_large_interest<-mean(subset(sig_neg_large, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_pos_large_interest<-sd(subset(sig_pos_large, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_neg_large_interest<-sd(subset(sig_neg_large, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+#
+pos_batoid_interest<-mean(subset(sig_pos_batoid, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+neg_batoid_interest<-mean(subset(sig_neg_batoid, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_pos_batoid_interest<-sd(subset(sig_pos_batoid, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+sd_neg_batoid_interest<-sd(subset(sig_neg_batoid, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)$effects)#
+ForPartB<-data.frame(Group=rep(c("Chondrichthyans", "Catsharks", "Large sharks", "Batoids"),2), #
+  Effect=c(pos_chon, pos_shy, pos_large, pos_batoid, neg_chon, neg_shy, neg_large, neg_batoid), #
+  error_plot=c(sd_pos_chon, sd_pos_shy, sd_pos_large, sd_pos_batoid,#
+    sd_neg_chon, sd_neg_shy, sd_neg_large, sd_neg_batoid), Direction=c(rep("Positive", 4), #
+    rep("Negative", 4)))#
+#
+ForPartB$bar_max<-ForPartB$Effect+ForPartB$error_plot#
+ForPartB$bar_min<-ForPartB$Effect-ForPartB$error_plot#
+ForPartB_interest<-data.frame(Group=rep(c("Chondrichthyans", "Catsharks", "Large sharks", "Batoids"),2), #
+  Effect=c(pos_chon_interest, pos_shy_interest, #
+   pos_large_interest, pos_batoid_interest,#
+    neg_chon_interest, neg_shy_interest, #
+    neg_large_interest,  neg_batoid_interest), #
+  error_plot=c(sd_pos_chon_interest, sd_pos_shy_interest, #
+    sd_pos_large_interest, sd_pos_batoid_interest,#
+    sd_neg_chon_interest,  sd_neg_shy_interest, #
+    sd_neg_large_interest, sd_neg_batoid_interest), Direction=c(rep("Positive", 4), #
+    rep("Negative", 4)))#
+#
+ForPartB_interest$bar_max<-ForPartB_interest$Effect+ForPartB_interest$error_plot#
+ForPartB_interest$bar_min<-ForPartB_interest$Effect-ForPartB_interest$error_plot#
+################################
+######For Part C:###############
+################################
+##getting effect sizes for species of interest:#
+#
+ForPlot_effects_pos_interest<-data.frame(species=c(as.character(sig_pos_interest$sp1_name), #
+  as.character(sig_pos_interest$sp2_name)), #
+  effects=c(sig_pos_interest$effects, sig_pos_interest$effects))#
+ForPlot_effects_pos_interest<-subset(ForPlot_effects_pos_interest, species%in%sp.of.interest)#
+#
+ForPlot_effects_neg_interest<-data.frame(species=c(as.character(sig_neg_interest$sp1_name), #
+  as.character(sig_neg_interest$sp2_name)), #
+  effects=c(sig_neg_interest$effects, sig_neg_interest$effects))#
+ForPlot_effects_neg_interest<-subset(ForPlot_effects_neg_interest, species%in%sp.of.interest)#
+#
+pos_effect_interest<-aggregate(effects~species, ForPlot_effects_pos_interest, mean)#
+pos_effect_interest<-rbind(pos_effect_interest, data.frame(species=c("Galjoen",#
+  "Yellowbelly.rock.cod"), effects=rep(NA,2))) #fill in missing species#
+#
+level_order_interest<-c(as.character(pos_effect_interest$species[order(-pos_effect_interest$effects)]),#
+  "Teleosts", "Crustaceans", "Cephalopods")#
+#
+neg_effect_interest<-aggregate(effects~species, ForPlot_effects_neg_interest, mean)#
+neg_effect_interest<-rbind(neg_effect_interest, data.frame(species=c("Galjoen", "Geelbek",#
+  "Janbruin", "Shad", "Silver.kob", "Slender.baardman", "Yellowbelly.rock.cod", "Zebra"), #
+       effects=rep(NA,8))) #fill in missing species#
+#
+#add means for all teleosts, all crustaceans, all cephalopods to Figure 3b:#
+pos_tel<-mean(sig_pos_tel$effects)#
+neg_tel<-mean(sig_neg_tel$effects)#
+sd_pos_tel<-sd(sig_pos_tel$effects)#
+sd_neg_tel<-sd(sig_neg_tel$effects)#
+pos_crust<-mean(sig_pos_crust$effects)#
+neg_crust<-mean(sig_neg_crust$effects)#
+sd_pos_crust<-sd(sig_pos_crust$effects)#
+sd_neg_crust<-sd(sig_neg_crust$effects)#
+#
+pos_ceph<-mean(sig_pos_ceph$effects)#
+neg_ceph<-mean(sig_neg_ceph$effects)#
+sd_pos_ceph<-sd(sig_pos_ceph$effects)#
+sd_neg_ceph<-sd(sig_neg_ceph$effects)#
+#
+#calculate sd for error bars:#
+error_interest_pos<-aggregate(effects~species, ForPlot_effects_pos_interest, sd)#
+error_interest_pos<-c(error_interest_pos$effects, rep(NA,2), sd_pos_tel, sd_pos_crust, sd_pos_ceph)#
+error_interest_neg<-aggregate(effects~species, ForPlot_effects_neg_interest, sd)#
+error_interest_neg<-c(error_interest_neg$effects, rep(NA,8), sd_neg_tel, sd_neg_crust, sd_neg_ceph)#
+error_interest<-c(error_interest_pos, error_interest_neg)#
+#
+ForBarPlot_interest1<-data.frame(Species=c(as.character(pos_effect_interest$species),#
+  "Teleosts", "Crustaceans", "Cephalopods",#
+  as.character(neg_effect_interest$species), "Teleosts", "Crustaceans", "Cephalopods"), #
+  Effect=c(pos_effect_interest$effects, pos_tel, pos_crust, pos_ceph,#
+    neg_effect_interest$effects, neg_tel, neg_crust, neg_ceph), error_plot=error_interest)#
+#
+ForBarPlot_interest<-subset(ForBarPlot_interest1, !Species%in%c("Geelbek", "Shad", #
+  "Galjoen", "Yellowbelly.rock.cod")) #remove species seen only once#
+ForBarPlot_interest$Species<-factor(ForBarPlot_interest$Species, levels=level_order_interest)#
+#
+############################
+########axis labels#########
+############################
+shark_order_names_fig3<-c("Dark catshark", "Leopard catshark", "Pyjama catshark", "Puffadder catshark",#
+  "Broadnose sevengill shark", "Biscuit skate", "Short-tail stingray", #
+ "Tiger catshark",  "Soupfin shark", "Smooth-hound shark","Spearnose skate",#
+  "Spotted-gully shark", "St. Joseph shark", "Eagle ray", "Lesser guitarfish")#
+#
+tel_names<-c("West coast rock lobster", "Roman", "White stumpnose",#
+  "Red stumpnose","Red steenbras", "Blacktail", "Janbruin", #
+  "Slender baardman", "Silver kob", "Zebra", "Teleosts", "Crustaceans", "Cephalopods")#
+#
+part_b_order<-c("Chondrichthyans", "Catsharks", "Large sharks", "Batoids")#
+##########
+#Ensure labels will come out in right order:#
+#
+ForPartB$Group<-factor(ForPartB$Group, levels=part_b_order)#
+ForPartB_interest$Group<-factor(ForPartB_interest$Group, levels=part_b_order)#
+#
+ForPartB$Direction<-factor(ForPartB$Direction, levels=c("Positive", "Negative"))#
+ForPartB_interest$Direction<-factor(ForPartB_interest$Direction, levels=c("Positive", "Negative"))
+#################################
+#####code for plots:#############
+#################################
+g1<-ggplot(ForBarPlot, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey30",15), rep("grey80",11))#
+  ) + ylab("") + xlab("Species") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size =  10, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 10, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=10))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.9, hjust=1)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=shark_order_names_fig3, expand = c(0.07, 0)) +#
+  theme(axis.ticks.length=unit(-0.2, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(a)") + #
+  theme(plot.title = element_text(size = 10))+#
+   theme(plot.margin=unit(c(0.2,0.2,0.6,0.3),"cm"))#
+#
+   barwidth<-0.35#
+#
+  g2<-ggplot() +#
+  geom_bar(data=ForPartB, mapping=aes(x = as.numeric(Group), y = Effect, #
+    fill = Direction), #
+    stat = "identity", position = position_stack(), width=barwidth) + #
+  geom_bar(data=ForPartB_interest, mapping=aes(x = as.numeric(Group)+barwidth+0.01, y = Effect, #
+    fill = Direction), col="black", size=1,#
+    stat = "identity", position = position_stack(), width=barwidth) +#
+  scale_fill_manual(values = c("Positive" = "grey30", "Negative" = "grey80"))+#
+  ylab("Co-occurrence strength") + xlab("Group") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 10, hjust = 0.5, vjust = -9)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 10, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=10))  +#
+  theme(axis.text.x = element_text(angle = 0, vjust=-8)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  theme(legend.position = "none") +#
+  theme(axis.ticks.length=unit(-0.2, "cm")) +#
+  scale_x_continuous(labels=part_b_order, expand=c(0.07,0.05), breaks=c(1.2:4.2))+#
+  geom_errorbar(aes(ymin=ForPartB$bar_min, #
+    x=as.numeric(ForPartB$Group), ymax=ForPartB$bar_max), width=.2) + #
+  geom_errorbar(aes(ymin=ForPartB_interest$bar_min, #
+    x=c(as.numeric(ForPartB_interest$Group)+barwidth+0.01), #
+    ymax=ForPartB_interest$bar_max), width=.2)+#
+   ggtitle("(b)") + #
+    theme(plot.title = element_text(size = 10))+#
+   theme(plot.margin=unit(c(0.2,0.2,0.6,0.3),"cm"))#
+#
+g3<-ggplot(ForBarPlot_interest, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey30", 13), rep("grey80",9))) + #
+  ylab("") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 10, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 10, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=10))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.7, hjust=0.9)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=tel_names, expand=c(0.07,0)) +#
+  theme(axis.ticks.length=unit(-0.2, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(c)") + #
+    theme(plot.title = element_text(size = 10))+#
+   theme(plot.margin=unit(c(0.2,0.2,0.6,0.3),"cm"))
+#Figure 5:#
+postscript(file="~/Dropbox/Osgood_et_al_2019_UmbrellaSpecies/Figures_Tables/Figure5.eps", width = 6.9, height = 8.5)#
+setEPS()#
+grid.arrange(g1, g2, g3, nrow = 3)#
+grid.rect(width =  0.99, height = 0.99, gp = gpar(lwd = 2, col = "black", fill = NA))#
+dev.off()
+library(ggplot2)#
+library(grid)#
+library(cooccur)
+postscript(file="~/Dropbox/Osgood_et_al_2019_UmbrellaSpecies/Figures_Tables/Figure5.eps", width = 6.9, height = 8.5)#
+setEPS()#
+grid.arrange(g1, g2, g3, nrow = 3)#
+grid.rect(width =  0.99, height = 0.99, gp = gpar(lwd = 2, col = "black", fill = NA))#
+dev.off()
+library(gridExtra)
+#Figure 5:#
+postscript(file="~/Dropbox/Osgood_et_al_2019_UmbrellaSpecies/Figures_Tables/Figure5.eps", width = 6.9, height = 8.5)#
+setEPS()#
+grid.arrange(g1, g2, g3, nrow = 3)#
+grid.rect(width =  0.99, height = 0.99, gp = gpar(lwd = 2, col = "black", fill = NA))#
+dev.off()
+#################################
+#####code for plots:#############
+#################################
+g1<-ggplot(ForBarPlot, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey30",15), rep("grey80",11))#
+  ) + ylab("") + xlab("Species") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size =  10, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 10, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=10))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.9, hjust=1)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=shark_order_names_fig3, expand = c(0.07, 0)) +#
+  theme(axis.ticks.length=unit(-0.2, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(a)") + #
+  theme(plot.title = element_text(size = 13))+#
+   theme(plot.margin=unit(c(0.2,0.2,0.8,0.3),"cm"))#
+#
+   barwidth<-0.35#
+#
+  g2<-ggplot() +#
+  geom_bar(data=ForPartB, mapping=aes(x = as.numeric(Group), y = Effect, #
+    fill = Direction), #
+    stat = "identity", position = position_stack(), width=barwidth) + #
+  geom_bar(data=ForPartB_interest, mapping=aes(x = as.numeric(Group)+barwidth+0.01, y = Effect, #
+    fill = Direction), col="black", size=1,#
+    stat = "identity", position = position_stack(), width=barwidth) +#
+  scale_fill_manual(values = c("Positive" = "grey30", "Negative" = "grey80"))+#
+  ylab("Co-occurrence strength") + xlab("Group") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 10, hjust = 0.5, vjust = -9)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 10, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=10))  +#
+  theme(axis.text.x = element_text(angle = 0, vjust=-8)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  theme(legend.position = "none") +#
+  theme(axis.ticks.length=unit(-0.2, "cm")) +#
+  scale_x_continuous(labels=part_b_order, expand=c(0.07,0.05), breaks=c(1.2:4.2))+#
+  geom_errorbar(aes(ymin=ForPartB$bar_min, #
+    x=as.numeric(ForPartB$Group), ymax=ForPartB$bar_max), width=.2) + #
+  geom_errorbar(aes(ymin=ForPartB_interest$bar_min, #
+    x=c(as.numeric(ForPartB_interest$Group)+barwidth+0.01), #
+    ymax=ForPartB_interest$bar_max), width=.2)+#
+   ggtitle("(b)") + #
+    theme(plot.title = element_text(size = 13))+#
+   theme(plot.margin=unit(c(0.2,0.2,0.8,0.3),"cm"))#
+#
+g3<-ggplot(ForBarPlot_interest, aes(x = Species, y = Effect)) +#
+  geom_bar(#
+    stat = "identity", position = position_stack(),#
+    color = "white", fill = c(rep("grey30", 13), rep("grey80",9))) + #
+  ylab("") +#
+  theme(panel.background=element_rect(fill="white", colour="white")) +#
+  theme(axis.line = element_line(colour = 'black', size = 1)) +#
+  theme(axis.title.x = element_text(colour = 'black', angle = 0, size = 10, hjust = 0.5, vjust = 0.2)) +#
+  theme(axis.title.y = element_text(colour = 'black', angle = 90, size = 10, hjust = 0.5, vjust = 1)) +#
+  theme(axis.text=element_text(colour="black", size=10))  +#
+  theme(axis.text.x = element_text(angle = 35, vjust=0.7, hjust=0.9)) +#
+  theme(axis.text.y = element_text(margin=margin(t = 0, r = 20, b = 0, l = 0))) +#
+  scale_x_discrete(labels=tel_names, expand=c(0.07,0)) +#
+  theme(axis.ticks.length=unit(-0.2, "cm")) +#
+  geom_errorbar(aes(ymin=c(Effect-error_plot), ymax=c(Effect+error_plot)), width=.2) + #
+   ggtitle("(c)") + #
+    theme(plot.title = element_text(size = 13))+#
+   theme(plot.margin=unit(c(0.2,0.2,0.8,0.3),"cm"))#
+#Figure 5:#
+postscript(file="~/Dropbox/Osgood_et_al_2019_UmbrellaSpecies/Figures_Tables/Figure5.eps", width = 6.9, height = 8.5)#
+setEPS()#
+grid.arrange(g1, g2, g3, nrow = 3)#
+grid.rect(width =  0.99, height = 0.99, gp = gpar(lwd = 2, col = "black", fill = NA))#
+dev.off()
+ForPartB
+ForPartB_interest
+subset(sig_neg_large, sp1_name%in%sp.of.interest | sp2_name%in%sp.of.interest)
+nrow(sig_pos_chon)
+nrow(sig_neg_chon)
+mean(sig_neg_chon$effects)
+sd(sig_neg_chon$effects)
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/env_wide.csv", header=TRUE, stringsAsFactors=FALSE)
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/Environmentals_SASC_BRUV.csv", header=TRUE, stringsAsFactors=FALSE)
+table(env$Profile)
+#Reading in data#
+BRUV.MaxN<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("c:/Users/shark_000/Dropbox/BRUV_Paper/Data_Analysis/Data/Environmentals_SASC_BRUV.csv", header=TRUE, stringsAsFactors=FALSE)#
+#
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/Environmentals_SASC_BRUV.csv", header=TRUE, stringsAsFactors=FALSE)#
+table(env$Profile)
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/Environmentals_SASC_BRUV.csv", header=TRUE, stringsAsFactors=FALSE)
+table(env$Profile)
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/Environmentals_SASC_BRUV.csv", header=TRUE, stringsAsFactors=FALSE)
+BRUV.MaxN<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/BRUV_wide.csv", header=TRUE, stringsAsFactors=FALSE)#
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/Environmentals_SASC_BRUV.csv", header=TRUE, stringsAsFactors=FALSE)#
+table(env$Profile)
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/Environmentals_SASC_BRUV.csv", header=TRUE, stringsAsFactors=FALSE)
+table(env$Profile)
+env1<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/Environmentals_SASC_BRUV.csv", header=TRUE, stringsAsFactors=FALSE)
+table(env1$Profile)
+env<-read.csv("~/Dropbox/BRUV_Paper/Data_Analysis/Data/Environmentals_SASC_BRUV.csv", header=TRUE, stringsAsFactors=FALSE)#
+table(env$Profile)
+#Created by: Geoffrey J. Osgood#
+#Last edited: 21-Nov-2019#
+#
+library(dplyr)#
+library(timeDate)#
+#
+#######Add the pre-2014 data:#
+setwd("~/Documents/git_repos/Cocos_El_Nino/")#
+setwd("c:/Users/shark_000/Documents/git_repos/Cocos_El_Nino/")#
+#
+pre2014<-read.csv(file="Data/Cleaned_Cocos_Malpelo_Data.csv", stringsAsFactors=FALSE)#
+post2014<-read.csv(file="Data/Cocos_Aug2019_CleanedJan2020.csv", stringsAsFactors=FALSE)#
+#
+SiteID_index<-distinct(pre2014[,c("Site", "SiteCode")]) #Get an index identifying which Site has which site code#
+DiverID_index<-distinct(pre2014[,c("DiverName", "DiverCode")]) #Get an index identifying which Dive guide has which diver code#
+#
+#Change site names to site codes in the SiteCode column in the post2014 data#
+#
+post2014$SiteCode <- SiteID_index$SiteCode[match(post2014$Site, SiteID_index$Site)]#
+post2014$DiverCode <- DiverID_index$DiverCode[match(post2014$DiverName, DiverID_index$DiverName)]#
+#
+#Give code of 200 for general Malpelo sites#
+post2014$SiteCode[post2014$Site=="Malpelo"]<-200#
+#
+#give miscellaneous dive sites a code of 119#
+post2014$SiteCode[is.na(post2014$Site)]<-119#
+#
+#Giving new divers with over 100 dives a new code#
+post2014$DiverCode[post2014$DiverName=="Arik"]<-42#
+post2014$DiverCode[post2014$DiverName=="Fernando"]<-43#
+post2014$DiverCode[post2014$DiverName=="Geovanny"]<-44#
+post2014$DiverCode[post2014$DiverName=="Hector"]<-45#
+post2014$DiverCode[post2014$DiverName=="Litus"]<-46#
+post2014$DiverCode[post2014$DiverName=="Merlin"]<-47#
+post2014$DiverCode[post2014$DiverName=="Roy"]<-48#
+pre2014$DiverCode[pre2014$DiverName=="Roy"]<-48 # Roy got more dives in new data, so give him his own code (not the generic one used for mischellaneous divers)#
+post2014$DiverCode[post2014$DiverName=="Sergio"]<-49#
+post2014$DiverCode[post2014$DiverName=="Stefan"]<-50#
+post2014$DiverCode[is.na(post2014$DiverCode)] <- 41 #miscellaneous divers codes not in pre2014 data - label as DiverCode = 41 to match with Easton's previous filtering#
+#
+#Remove two cases where date not recorded#
+post2014<-subset(post2014, !is.na(Date))#
+pre2014<-subset(pre2014, !is.na(Date))#
+pre2014<-subset(pre2014, Date!="")#
+#
+#Remove 1992 and 2014#
+pre2014<-subset(pre2014,Year>1992 & Year<2014)#
+#
+#Add day, month, and year columns to new post 2014 data:#
+post2014$Date<-as.Date(post2014$Date)#
+post2014$Day<-as.numeric(format(post2014$Date, format="%d"))#
+post2014$Month<-as.numeric(format(post2014$Date, format="%m"))#
+post2014$Year<-as.numeric(format(post2014$Date, format="%Y"))#
+post2014$StudyYear<-post2014$Year-min(pre2014$Year)+1 #number of years since study start#
+#
+#Make sure old data in right date format:#
+pre2014$Date<-as.Date(pre2014$Date, format="%m/%d/%Y")#
+#
+#Add Julian Date and make sure consistent across both data sets#
+post2014$JulianDate<-as.numeric(julian(timeDate(post2014$Date), origin = timeDate("1970-01-01")))#
+pre2014$JulianDate<-as.numeric(julian(timeDate(pre2014$Date), origin = timeDate("1970-01-01")))#
+#
+post2014$StudyJulianDate<-(as.numeric(post2014$JulianDate)-min(pre2014$JulianDate)+1) #number of days since first data point#
+pre2014$StudyJulianDate<-(pre2014$JulianDate-min(pre2014$JulianDate)+1) #number of days since first data point#
+#
+#Make sure study year is correct in old data#
+pre2014$StudyYear<-pre2014$Year-min(pre2014$Year)+1 #number of years since study start#
+#Fix row names#
+rownames(pre2014)<-1:nrow(pre2014)#
+#
+#Add Island codes to new data #
+post2014$IslandCode<-1#
+post2014$IslandCode[post2014$Site=="Malpelo"]<-2#
+#
+#Turn time into number (1,2,3,4) to match with TimeCode column of old data set#
+post2014$TimeCode<-as.numeric(factor(post2014$Time, levels=c("Morning", "Midday", #
+    "Afternoon", "Night")))#
+#
+#Fix missing time codes for pre2014 data#
+#
+pre2014[c(9259,15270,15359), "TimeCode"] <- 3#
+#
+pre2014[c(9430),"TimeCode"] <- 1#
+head(post2014)#
+#remove columns from pre2014 that I no longer need:#
+pre2014<-pre2014[,-c(9, 15, 16, 23, 24, 32, 33, 40:67)]#
+#
+#remove columns from post2014 that I no longer need:#
+post2014<-post2014[, -c(1,4,12,26)]#
+#
+#Add boat column to pre2014 (but fill with NAs as I can't tell from the data which boat for each row easily)#
+#This is just for checking multiple divers at same site at same time, which is mainly a problem for post2014 data#
+#Only 20 dates had possible issues in pre2014 - will look at manually#
+pre2014$Boat<-rep(NA, nrow(pre2014))#
+#Rename columns that do not match in both data sets#
+names(post2014)[names(post2014)=="Condition"] <- "SeaCondCode"#
+names(post2014)[names(post2014)=="Current_stength"] <- "CurrentCode"#
+names(pre2014)[names(pre2014)=="Hammerhead"] <- "Hammerheads"#
+names(pre2014)[names(pre2014)=="Tiger"] <- "TigerSharks"#
+names(pre2014)[names(pre2014)=="Silvertip"] <- "Silvertips"#
+names(pre2014)[names(pre2014)=="Blacktip"] <- "Blacktips"#
+names(pre2014)[names(pre2014)=="Whale.Shark"] <- "WhaleSharks"#
+names(pre2014)[names(pre2014)=="MarbleRays"] <- "MarbledRays"#
+#
+#Convert visibility and temperature to metric in pre2014 data#
+pre2014$SeaTempF=(pre2014$SeaTempF - 32)*(5/9)#
+pre2014$SeaTempF=round(pre2014$SeaTempF)#
+pre2014$VisibilityFt=pre2014$VisibilityFt*0.3048#
+pre2014$VisibilityFt=round(pre2014$VisibilityFt)#
+names(pre2014)[names(pre2014)=="SeaTempF"]<-'Temperature'#
+names(pre2014)[names(pre2014)=="VisibilityFt"]<-'Visibility'#
+#
+#Add ChronoSort column (sorting data by date)#
+post2014_ordered<-post2014[order(as.Date(post2014$Date)),]#
+post2014_ordered$ChronoSort<-1:nrow(post2014_ordered) #need to replace starting from beginning of data once all joined below#
+#
+#Put all the data together#
+cocos<-rbind(pre2014, post2014_ordered)#
+#
+##########
+#Remove sea condition column#
+cocos<-cocos[,-which(names(cocos)=="SeaCondCode")]#
+#remove high points in currentcode, change NAs to 0#
+cocos$CurrentCode[cocos$CurrentCode>5]=5#
+cocos$CurrentCode[is.na(cocos$CurrentCode)]=0#
+#
+##Add seasonlity terms#
+cocos$SIN_TIME=sin(2*pi*cocos$StudyJulianDate/365.25)#
+cocos$COS_TIME=cos(2*pi*cocos$StudyJulianDate/365.25)#
+#
+#remove divermasters who made less than 100 dives, and misc, unknown divemasters#
+cocos=subset(cocos,cocos$DiverCode!=36)#
+cocos=subset(cocos,cocos$DiverCode!=39)#
+cocos=subset(cocos,cocos$DiverCode!=41)#
+cocos=subset(cocos,cocos$DiverCode!=40)#
+#
+trial<-subset(cocos, Year==1993)#
+trial2<-subset(cocos, Year==1993)#
+#
+#Add Cocos study month#
+cocos$StudyMonth<-cocos$Month+12*(cocos$StudyYear-1)#
+#
+#Reset Cocos Study Julian Day#
+cocos$StudyJulianDate<-cocos$StudyJulianDate-min(cocos$StudyJulianDate)+1#
+#save file for Malpelo analyses#
+malpelo<-subset(cocos, IslandCode==2)#
+malpelo<-malpelo[order(as.Date(malpelo$Date)),]#
+malpelo$ChronoSort<-1:nrow(malpelo)#
+#
+#remove miscellaneous dive sites #
+cocos=subset(cocos,cocos$SiteCode<119)#
+cocos=subset(cocos,cocos$SiteCode!=104)#
+#
+#Update ChronoSort column (sorting data by date)#
+cocos<-cocos[order(as.Date(cocos$Date)),]#
+cocos$ChronoSort<-1:nrow(cocos)#
+#
+#Replace "M" in Silky column with 0#
+cocos$Silky[cocos$Silky=="M"]<-0#
+#
+#create dive ID to indicate unique dives (ie multiple observations from multiple dive guides on the same dive)#
+cocos$ID<- as.numeric(factor(paste(cocos$Date, cocos$Time, cocos$Site, cocos$Boat)))#
+cocos$ID[is.na(cocos$Time)] <- paste("NA_", cocos$ChronoSort[is.na(cocos$Time)], sep="")#
+#
+#Remove duplicate rows on same dive#
+#
+#Remove all duplicated rows regardless of how many divers are on the dive#
+cocos<-cocos[!duplicated(cocos[,c(19:31,36)]),]#
+#
+#determine which dives had more than 2 divers recording data#
+id_table<-data.frame(table(cocos$ID))#
+id_multi<-subset(id_table, Freq>1)#
+multi_prob<-subset(cocos, ID%in%unique(id_multi$Var1)) #identify dives at same site and time with more than 1 diver#
+#
+#re-establish Chronsort to ensure it works#
+cocos$ChronoSort<-1:nrow(cocos)#
+#
+#divide based on pre and post 2014 due to lack of boat information before 2014#
+old<-subset(cocos, Year<2014 & Date%in%unique(multi_prob$Date)) #
+new<-subset(cocos, Year>=2014 & Date%in%unique(multi_prob$Date))#
+#
+new$DateTime<-paste(new$Date, new$Time, new$Boat)#
+old$DateTime<-paste(old$Date, old$Time, old$Boat)#
+#
+num_div<-function(x) {length(unique(x))} #function to identify how many divers on a boat on a date (if only 2, then it is safe to assume each in their own group)#
+#
+#use the above function to identify dates with too many divers for just two dive groups per boat#
+ag_length_new<-aggregate(new$DiverCode, by=list(new$DateTime), num_div)#
+ag_length_old<-aggregate(old$DiverCode, by=list(old$DateTime, old$Year), num_div)#
+#
+too_many_new<-subset(ag_length_new, x>2) #identify dates with too many divers for just two groups#
+too_many_old<-subset(ag_length_old, x>2) #identify dates with too many divers for just two groups#
+#
+cocos$DateTime<-paste(cocos$Date, cocos$Time, cocos$Boat)#
+#
+#subset cocos to find dives on dates with too many divers to assume just two groups#
+cocos_new<-subset(cocos, ID%in%unique(as.character(id_multi$Var1)) & DateTime%in%unique(too_many_new$Group.1))#
+cocos_old<-subset(cocos, ID%in%unique(as.character(id_multi$Var1)) & DateTime%in%unique(too_many_old$Group.1))#
+#for loop to determine which dives are done by the INEXPERIENCED divers (to remove them later)#
+#
+chosen_dives_new<-NULL#
+for (i in 1:length(unique(cocos_new$ID))) {#
+#
+    divers<-subset(cocos, ID==unique(cocos_new$ID)[i])$DiverCode#
+    trial<-subset(cocos, DiverCode%in%divers)#
+#
+    df.trial<-data.frame(table(trial$DiverCode))#
+#
+    chosen_dives_new[i]<-subset(cocos_new, #
+        DiverCode==as.character(df.trial[which.max(df.trial$Freq),1]) & ID==unique(cocos_new$ID)[i])$ChronoSort#
+#
+}#
+#
+not_chosen_dives_new<-subset(cocos_new, !ChronoSort%in%chosen_dives_new)$ChronoSort # determine which dives are from inexperienced divers#
+chosen_dives_old<-NULL#
+for (i in 1:length(unique(cocos_old$ID))) {#
+#
+    divers<-subset(cocos, ID==unique(cocos_old$ID)[i])$DiverCode#
+    trial<-subset(cocos, DiverCode%in%divers)#
+#
+    df.trial<-data.frame(table(trial$DiverCode))#
+#
+    chosen_dives_old[i]<-subset(cocos_old, #
+        DiverCode==as.character(df.trial[which.max(df.trial$Freq),1]) & ID==unique(cocos_old$ID)[i])$ChronoSort#
+#
+}#
+#
+not_chosen_dives_old<-subset(cocos_old, !ChronoSort%in%chosen_dives_old)$ChronoSort # determine which dives are from inexperienced divers#
+#
+length(not_chosen_dives_new)#
+#
+length(unique(cocos_old$ID))#
+cocos_fixed<-subset(cocos, !ChronoSort%in%c(not_chosen_dives_old, not_chosen_dives_new)) #remove dives from inexperienced divers#
+write.csv(cocos_fixed,"~/Documents/git_repos/Cocos_El_Nino/Data/Cocos_Updated.csv")#
+write.csv(malpelo,"~/Documents/git_repos/Cocos_El_Nino/Data/Malpelo.csv")#
+#
+write.csv(cocos_fixed,"c:/Users/shark_000/Documents/git_repos/Cocos_El_Nino/Data/Cocos_Updated.csv")#
+write.csv(malpelo,"c:/Users/shark_000/Documents/git_repos/Cocos_El_Nino/Data/Malpelo.csv")
+same_diver<-data.frame(table(cocos_old$ID, cocos_old$DiverCode))
+subset(same_diver, Freq>1)
+subset(cocos_old, ID==17894)
+subset(cocos_old, ID==17916)
+subset(cocos_old, ID==17927)
+subset(cocos_old, ID==5029)
+same_diver
+same_diver<-data.frame(table(multi_prob$ID, multi_prob$DiverCode))
+subset(same_diver, Freq>1)
+chosen_dives_old<-NULL
+for (i in 1:length(unique(cocos_old$ID))) {#
+#
+    divers<-subset(cocos, ID==unique(cocos_old$ID)[i])$DiverCode#
+    trial<-subset(cocos, DiverCode%in%divers)#
+#
+    df.trial<-data.frame(table(trial$DiverCode))#
+#
+    chosen_dives_old[i]<-subset(cocos_old, #
+        DiverCode==as.character(df.trial[which.max(df.trial$Freq),1]) & ID==unique(cocos_old$ID)[i])$ChronoSort[1]#
+#
+}
+setwd("/Users/gjosgood/Documents/git_repos/Cocos_El_Nino/Scripts/Scripts_for_Data_Cleaning")
+not_chosen_dives_old<-subset(cocos_old, !ChronoSort%in%chosen_dives_old)$ChronoSort # determine which dives are from inexperienced divers#
+#
+length(not_chosen_dives_new)
+length(not_chosen_dives_old)
+cocos_fixed<-subset(cocos, !ChronoSort%in%c(not_chosen_dives_old, not_chosen_dives_new)) #remove dives from inexperienced divers
+nrow(cocos_fixed)
+nrow(cocos)-nrow(cocos_fixed)
